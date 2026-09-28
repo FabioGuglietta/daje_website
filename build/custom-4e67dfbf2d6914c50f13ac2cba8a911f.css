@@ -1,0 +1,165 @@
+/* ============================================================
+   MyST Book Theme custom layout
+   ============================================================ */
+
+:root {
+  --left-sidebar-width: 460px;
+  --main-left-offset: 0px;
+
+  --right-toc-width: 100px;
+  --left-gap: 0.75rem;
+  --right-gap: 0.75rem;
+  --toc-gap: .25rem;
+}
+
+/* ============================================================
+   Left sidebar
+   ============================================================ */
+
+/* Override MyST/Tailwind fixed sidebar width */
+.max-w-\[350px\],
+.xl\:max-w-\[350px\],
+.max-xl\:max-w-\[350px\] {
+  max-width: var(--left-sidebar-width) !important;
+}
+
+/* Left sidebar wrappers */
+.myst-primary-sidebar,
+.myst-primary-sidebar-pointer,
+.myst-primary-sidebar-content,
+.myst-primary-sidebar-nav,
+.myst-primary-sidebar-toc,
+.myst-primary-sidebar-footer {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+  overflow: visible !important;
+}
+
+/* Left sidebar links */
+.myst-primary-sidebar a {
+  font-size: 0.88rem;
+  line-height: 1.28;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* Undo Tailwind word breaking inside sidebar */
+.myst-primary-sidebar .break-words {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* ============================================================
+   Main article area
+   ============================================================ */
+
+/*
+   The main panel starts immediately after the left sidebar.
+   The right TOC is fixed to the right edge.
+*/
+
+main.article-grid {
+  margin-left: var(--main-left-offset) !important;
+  margin-right: calc(var(--right-toc-width) + var(--right-gap) + var(--toc-gap)) !important;
+
+  transform: none !important;
+  display: block !important;
+
+  width: auto !important;
+  max-width: none !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Article column fills the available central space */
+main.article-grid article {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+/* Inner article containers */
+main.article-grid article > div,
+main.article-grid article section,
+main.article-grid .myst-content,
+main.article-grid .prose,
+main.article-grid .article-content {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+/* Text elements use full article width */
+main.article-grid article p,
+main.article-grid article ul,
+main.article-grid article ol,
+main.article-grid article dl,
+main.article-grid article blockquote,
+main.article-grid article h1,
+main.article-grid article h2,
+main.article-grid article h3,
+main.article-grid article h4,
+main.article-grid article h5,
+main.article-grid article h6 {
+  max-width: 100% !important;
+}
+
+/* Wide elements stay inside the central article */
+main.article-grid article pre,
+main.article-grid article .highlight,
+main.article-grid article .admonition,
+main.article-grid article table {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+/* ============================================================
+   Right contents panel
+   ============================================================ */
+
+/*
+   Fixed to the right edge of the viewport.
+   If the browser window gets wider, this moves right automatically.
+*/
+
+main.article-grid nav[aria-label="Contents"] {
+  position: fixed !important;
+
+  top: 5rem !important;
+  right: var(--right-gap) !important;
+
+  width: var(--right-toc-width) !important;
+  max-width: var(--right-toc-width) !important;
+  min-width: var(--right-toc-width) !important;
+
+  max-height: calc(100vh - 7rem) !important;
+  overflow-y: auto !important;
+}
+
+/* Right contents links */
+main.article-grid nav[aria-label="Contents"] a {
+  width: auto !important;
+  max-width: calc(var(--right-toc-width) - 20px) !important;
+  white-space: normal !important;
+}
+
+/* ============================================================
+   Readability
+   ============================================================ */
+
+main p {
+  line-height: 1.65;
+}
+
+/* Code blocks */
+pre {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}

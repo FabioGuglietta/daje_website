@@ -1,0 +1,451 @@
+- [Functions](#functions)
+- [The `printf` function](#the-printf-function)
+- [The `if` statement](#the-if-statement)
+- [The `for` loop](#the-for-loop)
+- [The `main` function](#the-main-function)
+- [Functions as arguments to other functions](#functions-as-arguments-to-other-functions) --->
+
+We now want to write a numerical code to compute
+$$\int_0^1 f(x)\ dx$$
+with $f(x)=x^3$. Obviously, we already know the solution:
+$$\int_0^1 x^3\ dx = \frac{1}{4}$$
+
+> [!TIP]
+> Knowing exactly what a numerical code (and, in particular, a small part of a huge code) is expected to do is a key aspect in numerical sicence (sometimes, it can be regarded as a privilege!). In this way, we are sure that (a portion of) the code we implemented works.
+
+We will implement the numerical integration by using the trapezoidal rule.
+
+> ### Trapezoidal Rule [^wiki1]
+> <div style="display: flex;">
+>   <div style="flex: 1;">
+>     In calculus, the trapezoidal rule is a technique for numerical integration, i.e., approximating the definite integral:
+>
+> $$ \int_a^b f(x) dx \approx \sum_{i=1}^N \frac{f(x_i)+f(x_{i+1})}{2}\Delta x_i $$
+>
+>   </div>
+>   <div style="flex-shrink: 0;">
+>     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Integration_num_trapezes_notation.svg/1920px-Integration_num_trapezes_notation.svg.png" width="250" style="float:right; margin-left: 20px;">
+>   </div>
+> </div> 
+> 
+
+## Pseudo-code algorithm
+In pseudo-code, we should do something like:
+
+```fortran
+function f(x)  
+	return x^3 
+end function
+
+function trapezoidal_rule(a, b, N)  
+	p = (b-a) / N
+	sum = 0.
+	do i = 0 to N-1
+		x1 = a + i * p
+		x2 = a + (i+1) * p
+		sum = sum + (f(x1)+f(x2)) * p * 0.5
+	return sum
+end function
+
+program
+	a = 0  
+	b = 1  
+	N = 1000
+
+	if N>0: print "The number of trapezoid used is N"
+	if N<0: print "The number of trapezoid used is negative" stop
+	if N=0: print "The number of trapezoid used is zero" stop
+	
+	result = trapezoidal_rule(a, b, N)  
+	print "The integral of f(x) = x^3 from a to b is approximately: result"
+	
+end program
+```
+
+> [!TIP]
+> Before implementing the code in C, we notice that there is a more clever way of coding the function `trapezoidal_rule` calling the  function only once per iteration, as the `f(x2)` term at iteration `i` is the same as the term `f(x1)` at iteration `i+1`, and the only cases when this is not true are the  end points, which we can handle separately:  
+> ```fortran
+> function trapezoidal_rule(a, b, N)  
+>	p = (b-a) / N  
+>	sum = 0.5 * (f(a) + f(b)) # End points contribution  
+>	do i = 1 to N-1	  
+>		x = a + i * p     
+>		sum = sum + f(x)     
+>	return sum * p
+> end function
+> ```
+> This way we already improved the numerical efficiency of our code by almost 100%!
+>
+
+> [!IMPORTANT]
+> Often directly translating a mathematical formula into an algorithm does not yield
+> the best performances, as in the case of the trapezoidal integration.
+> When coding, always think if there is a clever way of implementing your algorithms, 
+> that minimises the number of calculations and reduces reads and write to memory.
+
+## C implementation
+
+We are now ready to look at the C implementation. We first list the complete code, but don't worry, we will analyse it line by line later:
+
+```C
+#include <stdio.h>
+#include <math.h>
+
+// Define the function to integrate: f(x) = x^3
+double f(double x) {
+    return pow(x, 3); // pow(a,b) computes a^b
+}
+
+// Trapezoidal rule for numerical integration
+double trapezoidal_rule(double a, double b, int n) {
+    double p = (b - a) / n;            // Width of each trapezoid
+    double sum = 0.5 * (f(a) + f(b));  // End points contribution
+
+    for (int i = 1; i < n; i++) {
+        double x = a + i * p;
+        sum += f(x);
+    }
+
+    return sum * p;
+}
+
+int main() {
+	double a = 0.0;  // Lower limit of integration
+	double b = 1.0;  // Upper limit of integration
+	int n = 1000;    // Number of trapezoids (higher n for better accuracy)
+	
+	printf("This program performs numerical integration of f(x) = x^3 from a = %.2f to b = %.2f using %d trapezoids.\n", a, b, n);
+	
+	// Check if n is a valid number of trapezoids
+	if (n > 0) {
+		printf("The number of trapezoids is positive.\n", n);
+	} else if (n < 0) {
+		printf("Error: The number of trapezoids is negative.\n");
+	} else {
+		printf("Error: The number of trapezoids is zero.\n");
+	}
+	
+	// Perform numerical integration
+	double result = trapezoidal_rule(a, b, n);
+	
+	printf("The integral of f(x) = x^3 from %.2f to %.2f is approximately: %.5f\n", a, b, result);
+	
+	return 0;
+}
+```
+
+Here is the explanation of each block:
+
+## Preprocessor directives
+
+The preprocessor is a program that processes source code files and is commonly used with C, C++, and other programming languages. It handles tasks like including files, expanding macros, conditionally compiling parts of the code, making the source code easier to read and more compact. It is usually a separate program from the compiler, for practical and historical reasons. You can learn more about its basic use in the section on [building C programmes](../Lecture_building_code/building_c_code_BASIC.md) and more advanced usage examples in the [C preprocessor section](C_preprocessor.md).
+
+
+Our code starts with two ***preprocessor directives***:
+```C
+#include <stdio.h>
+#include <math.h>
+```
+
+The line `#include <stdio.h>` tells the compiler to include the so called "header" file (hence, the `.h` extension) with the definitions for several variable types, macros, and various input/output (I/O) functions,  such as reading from the keyboard (`scanf`) or writing to the console (`printf`).
+
+<!-- > [!CAUTION]
+> TODO: add link to relevant section to preprocessing/headers/libraries -->
+
+The `math.h` header file provides a variety of mathematical functions, such as `sin()`, `cos()`, `sqrt()`, `pow()`, and more. 
+
+<!-- > [!CAUTION]
+> TODO: add link to advanced math libraries, MKL etc. and what to choose to be performant.` -->
+
+## The printf() function
+
+Since we have included `stdio.h` we have access to the  `printf` function in C, which is used to print formatted output to the terminal (what is called standard output, or `stdout` in unix-like operating systems). 
+The basic usage of `printf` can be shown with this example:
+
+```c
+printf("The sum of %d and %d is %d \n", 1, 2, 1+2);
+```
+which produces the following output
+```plain
+The sum of 1 and 2 is 3
+```
+
+> [!NOTE]
+> In C, the semicolon `;` is used as a statement terminator. Every executable statement in C must end with a semicolon, whether it’s a variable declaration, function call, or control statement. It tells the compiler where one statement ends and the next one begins.
+
+`printf()` is a special kind of function that accepts an arbitrary number of arguments separated by commas. As you might have noticed, there are special character sequences `%d` (called format specifiers)  within the first argument (the string "The sum of..."), which are replaced by the values (1, 2, 1+2) passed as next arguments. The special "escape sequence" `\n` tells the code to insert a newline. We will encounter and discuss several other useful escape sequences later on. 
+
+> [!NOTE]
+> In this case `%d` tells `printf()` to format the output as an integer. Here `d` stands for `decimal` - as opposed to the octal (`%o`) or hexadecimal (`%x`) bases used to represent integer numbers.
+
+In the specific case of our example, we have:
+
+```c
+printf("This program performs numerical integration of f(x) = x^3 from a = %.2f to b = %.2f using %d trapezoids.\n", a, b, n);
+```
+The format specifiers here are used to interpret the following arguments as floating point real numbers with two decimals (`%.2f`) besides the usual decimal integer (`%d`). 
+> [!NOTE]
+> The computer stores in memory everything as a binary sequence (e.g. `0011 0101 0101 1101`). It's up to you/the code to decide how to interprete those sequences. It could be an integer (e.g. binary `1101` is 13 decimal, interpreted from right to left as 1 x $2^0$ + 0 x $2^1$ + 1 x $2^2$ + 1  x $2^3$ = 13) or as a real number (in this case the representation changes depening on the precision we want for exponent and mantissa, more on this `TODO`).
+
+<!-- > [!CAUTION]
+> TODO: add link to relevant section to asm/representation -->
+
+
+So the general form is `printf("some text %format_specifier1 some other text %format_specifier2 ...", var1, var2)`. Here some examples of ***format specifiers***:
+
+- `%d`: For printing integers (`printf("N = %d \n", 5);`).
+- `%f`: For printing floating-point numbers (`printf("x = %f \n", 2.3456);`).
+- `%.2f`: For printing floating-point numbers with 2 decimal places.
+- `%c`: For printing a single character (printf("The chosen letter is %c \n", 'A');`).
+- `%s`: For printing strings (printf("My name is %s \n", "Alice");`).
+
+> [!WARNING]
+> As you might have noticed, in C single characters are represented with single quotes (`'A'`) whereas strings use double quotes (`"A string"`). You might wonder what's the difference between `'A'` and `"A"`: the fact is that a character is encoded as an 8-bit value. For example, 'A' is binary `0100 0001` which is decimal 65, while a string is a null-terminated sequence of characters, where `null` is binary `0000 0000`, or zero decimal. 
+
+> [!WARNING]
+> Ensure the format specifier corresponds to the type of the variable. 
+> If you pass the wrong type to the `printf()` function you might get surprising results, because of the way the sequence of bits is interpreted. For example
+> ```c
+> printf("%d\n", 1.0); // note that 1.0 is stored in memory as a floating point number, not as a decimal number
+> ```
+> ```
+> -2084713672
+> ```
+> Note that depending on you architecture and compiler you might get a different result.
+ 
+
+
+Some useful escape characters:
+
+- `\n`: Inserts a newline.
+- `\t`: Inserts a tab space.
+- `\\`: Inserts a literal backslash.
+- `%%`: Prints a literal %.
+
+> [!TIP]
+> You can split a long `printf` statement across multiple lines by simply breaking the string and continuing it on the next line using the `\` (backslash) character or just closing the string and concatenating it with the next part.
+> Examples:
+> 
+> ```C
+> printf("Once upon a time, in a galaxy far, far away, a programmer wrote a code so long, \
+> that even their cat, sitting on the keyboard, couldn't stop it from running perfectly.\n");
+> ```
+> 
+> ```C
+> printf("Once upon a time, in a galaxy far, far away, a programmer wrote a code so long, "
+>       "that even their cat, sitting on the keyboard, couldn't stop it from running perfectly.\n");
+> ```
+
+
+## Types and casting
+
+In C, variables are declared with specific **data types**, which determine the **kind** of data they can hold, the **size** they occupy in memory, and the **operations** that can be performed on them. Understanding types is fundamental to writing efficient and correct programs.
+
+Some of the basic data types are: 
+- `int` (4 bytes, which is 32 bits – on 64 bit machines!): Represents integer numbers, both positive and negative:
+  ```C
+  int age = -25;
+  ```
+  The largest representable signed integer number is $2^{31} – 1$ or about 2 billions (one out of the 32 bits is used for the sign).
+- `float` (4 bytes): Represents single-precision floating-point numbers (6 to 9 significant decimal digits):
+  ```C
+  float temperature = 98.6;
+  ```
+- `double` (8 bytes): Represents double-precision floating-point numbers (15 to 17 significant decimal digits):
+  ```C
+  double pi = 3.14159;
+  ```
+- `char` (1 byte): Represents a single character. Use single quotes `'` for a character (double quotes `"` are for strings) : 
+  ```C
+  char letter = 'A';
+  ```
+
+> [!WARNING]
+> TODO: add a link to an advanced page that discusses type representation
+
+If you ever wonder how many bytes are used to store  a variable, you can use the `sizeof()` operator to determine the size of any type or variable in bytes. For example:
+
+```C
+int a;
+printf("Size of int: %d bytes\n", sizeof(a));  // Typically prints 4. More on printf later
+```
+
+
+
+Types can be automatically or explicitly converted in C:
+
+- **Explicit** type conversion (also called "**casting**") is when you manually convert a value from one type to another using the casting syntax.
+
+- **Implicit** type conversion (also called "**type promotion**"): the compiler automatically converts one data type to another when necessary. In expressions that involve different types (e.g., `int` and `double`), the smaller type is automatically promoted to the larger type.
+
+The following example shows both kind of conversion:
+
+```C
+double pi;
+int truncated;
+
+pi = 4 * atan(1.);
+
+/* Explicit conversion of 'pi' (double) to 'int': */
+truncated = (int)pi;
+printf("The integer part of Pi is: %d\n", truncated_pi);  /* Output: 3 */
+
+/* Implicit conversion of 'a' (int) to 'double' */
+pi = truncated;
+
+printf("Result: %.2f\n", result);  /* Output: 3.00 */
+```
+
+> [!WARNING]
+> Implicit conversion can lead to precision loss: when converting from a larger or more precise type (like `double` or `long`) to a smaller or less precise type (like `int` or `float`), the conversion can result in a loss of precision or data.
+>
+> ```C
+> double pi = 3.14159;
+> int value = pi;  // Implicit conversion truncates decimal part
+> ```
+
+## Functions
+
+Let's look at the first function called `f`:
+
+```C
+double f(double x) {
+    return pow(x, 3); // pow(a,b) computes a^b
+}
+```
+
+- The first line `double f(double x)` defines a function named `f` that takes a single argument `x` of type `double` (a floating-point number with double precision). The function is also declared to return a `double` value, which means that the result of the function will be a floating-point number.
+
+- The curly braces `{` and `}` mark the beginning and end of the function body. Everything inside the curly braces is part of the logic that the function will execute when called.
+
+- The line return `pow(x, 3);` returns the result of `pow(x, 3)`. The `pow(a, b)` function, from the `math.h` library, raises the base `a` to the power of `b`. The result is returned as the output of the function `f`.
+
+- The line `// pow(a,b) computes a^b` is is a comment explaining that the pow(a, b) function computes a raised to the power of b. Comments are ignored by the compiler and are meant to make the code easier to understand for humans.
+
+> [!NOTE]
+> When a variable is "passed" as an argument to a function in `C`, it's the value of this variable that's actually passed to the function. 
+> This means that if you change the value of a variable passed to a function it won't change its value outside of it. This will be discussed in
+> TODO add link to chapter `C_reference_vs_value.md`
+
+## The `if` statement
+
+The following code block shows an example of an `if` statement:
+
+```C
+if (n > 0) {
+    printf("The number of trapezoids is positive.\n", n);
+} else if (n < 0) {
+    printf("Error: The number of trapezoids is negative.\n");
+} else {
+    printf("Error: The number of trapezoids is zero.\n");
+}
+
+```
+
+The `if` statement in C allows you to control the flow of your program based on conditions. It checks if a certain condition is true and executes a block of code accordingly. If the condition is false, it moves to the next condition or the `else` block.
+
+1.	`if (n > 0)`:
+	- This condition checks if the value of n is greater than 0.
+	- If true, the program executes the code inside this block: it prints “The number of trapezoids is positive.”.
+	- If false, it moves to the next condition.
+2.	`else if (n < 0)`:
+	- This checks if n is less than 0.
+	- If true, the program prints an error message: “Error: The number of trapezoids is negative.”
+	- If false, the program moves to the final else block.
+3.	`else`:
+	- This block is executed if none of the previous conditions were true. Since the only other possibility is that n equals 0, the program prints: “Error: The number of trapezoids is zero.”
+
+You can combine multiple conditions using logical `&&` (AND) and `||` (OR) to make your checks more compact.
+
+```C
+if (n > 0 && n < 100) {
+    printf("n is positive and less than 100.\n");
+}
+```
+
+> [!TIP]
+> For simple `if-else` conditions, consider using the ternary operator `?` `:`. This can make the code more concise but should be used sparingly to avoid reducing readability.
+> ```C
+> int result = (n > 0) ? 1 : -1;  // If n > 0, result is 1; otherwise, it's -1
+> ```
+
+> [!WARNING]
+> Be Careful with Floating-Point Comparisons! Comparing floating-point numbers using `==` can be unreliable due to precision issues. Use a small threshold instead of direct equality checks.
+> ```C
+> if (fabs(a - b) < 0.00001) {  // a and b are "close enough"
+>    // Handle case where a is approximately equal to b
+> }
+> ```
+
+
+## The `for` loop
+
+In the second function defined in the example code, we can see an example of ***for loop***:
+
+```C
+for (int i = 1; i < n; i++) {
+    double x = a + i * p;
+    sum += func(x);
+}
+```
+
+The first line `for (int i = 1; i < n; i++)` sets up a for loop that will iterate from `i = 1` to `i < n`. The loop does the following:
+
+- `int i = 1;` initializes the loop counter `i` to 1.
+- `i < n;` specifies the condition under which the loop continues to run. The loop will keep running as long as `i` is less than `n`.
+- `i++` increments `i` by 1 after each iteration of the loop.
+
+The curly braces `{` and `}` define the block of code that will be repeatedly executed for each iteration of the loop.
+
+> [!NOTE]
+> In C, operators like `+=`, `-=`, `*=`, `/=`, and `%=` are called ***compound assignment operators***. They provide a shorthand way to perform an operation and then assign the result back to the variable (e.g., `a+=1` is equivalent to `a = a+1`)
+
+## The `main` function
+
+The `main` function is a special one (and a reserved word) which serves as a main entry point for the execution
+of the program. This means that if a `main` function is present, the code will be made executable by the compiler,
+and the execution will begin from there: 
+> [!NOTE]
+> This is at odds with many other programming languages that use different syntaxes to define their entry point, 
+> like Fortran's or Pascal's `program`. In C, the function is the basic element used to organise ("structure") the 
+> code, and this is why it is an example of a so-called structured programming language. 
+
+```C
+int main() {
+    double a = 0.0;  // Lower limit of integration
+    double b = 1.0;  // Upper limit of integration
+    int n = 1000;    // Number of trapezoids (higher n for better accuracy)
+
+    // Perform numerical integration
+    double result = trapezoidal_rule(f, a, b, n);
+
+    printf("The integral of f(x) = x^3 from %.2f to %.2f is approximately: %.5f\n", a, b, result);
+
+    return 0;
+}
+```
+
+
+`main(){...}` is the entry point of every C program. When you run the program, the code inside the `main` function is executed. The return type `int` indicates that the program will return an integer value when it finishes running (in this case, it returns 0 at the end to signal successful completion).
+
+The line `double result = trapezoidal_rule(f, a, b, n);` calls the `trapezoidal_rule` function to perform the integration of $f(x) = x^3$ from `a = 0.0` to `b = 1.0` using `n=1000` trapezoids. The result of the integration is stored in the variable result.
+
+## Functions as arguments to other functions
+
+You might have noticed that if you want to integrate a different function you need to change the definition of the function  `f`. There are more flexible approaches: in C, it is possible to pass a function (like `f`) as an argument to another function (like `trapezoidal_rule`). This means that instead of passing a value, we tell the compiler where to find the function `f`. We will discuss this approach when talking about pointrs in TODO Add links to relevant sections on pointer.s
+
+<!---
+The `trapezoidal_rule` function is written to accept another function as its first argument. In technical terms, it accepts this function by *“pointing to it”* (we don’t need to worry about how this works behind the scenes, for the time being). Indeed, the function `trapezoidal_rule` takes the following inputs:
+
+`double trapezoidal_rule(double (*func)(double), double a, double b, int n)`
+
+Note that `double a`, `double b` and `int n` are *regular variables*. Their values are just data that the function `trapezoidal_rule` needs to perform its calculation. 
+
+On the other hand, `double (*func)(double)` specifies that `func` is a function that takes a `double` as input and returns a `double`. It is used to pass a function itself into `trapezoidal_rule`, allowing it to evaluate any function you provide. 
+
+The asterisk in front of the name of the function (`*func`)  indicates that `func` is a *function pointer*. This means `func` is not just a regular variable but a reference to a function that takes a `double` as an argument and returns a `double`.
+-->
+
+
+## References
+[^wiki1]: https://en.wikipedia.org/wiki/Trapezoidal_rule

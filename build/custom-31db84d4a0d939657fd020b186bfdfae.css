@@ -1,0 +1,136 @@
+/* ============================================================
+   Global variables
+   ============================================================ */
+
+:root {
+  --content-max-width: 1100px;
+
+  /* Left sidebar */
+  --left-sidebar-width: 460px;
+}
+
+/* ============================================================
+   Left sidebar: width and clipping fixes
+   ============================================================ */
+
+/* Override MyST/Tailwind fixed max-width */
+.max-w-\[350px\],
+.xl\:max-w-\[350px\],
+.max-xl\:max-w-\[350px\] {
+  max-width: var(--left-sidebar-width) !important;
+}
+
+/* Main sidebar wrapper */
+.myst-primary-sidebar {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+  overflow: visible !important;
+}
+
+/* Clipping parent */
+.myst-primary-sidebar-pointer {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+  overflow: visible !important;
+}
+
+/* Internal sidebar blocks */
+.myst-primary-sidebar-content,
+.myst-primary-sidebar-nav,
+.myst-primary-sidebar-toc,
+.myst-primary-sidebar-footer {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+  overflow-x: visible !important;
+}
+
+/* Sidebar link text */
+.myst-primary-sidebar a {
+  font-size: 0.88rem;
+  line-height: 1.28;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* Undo Tailwind break-words inside sidebar */
+.myst-primary-sidebar .break-words {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* ============================================================
+   Central layout
+   ============================================================ */
+
+/* Keep this as requested */
+main.article-grid {
+  margin-left: 400px !important;
+  column-gap: 2rem !important;
+  transform: none !important;
+}
+
+/* Article column: not too large, otherwise it collides with right TOC */
+main.article-grid article {
+  width: 760px !important;
+  max-width: 760px !important;
+}
+
+/* Inner article content */
+main.article-grid article > div,
+main.article-grid article section,
+main.article-grid .myst-content,
+main.article-grid .prose,
+main.article-grid .article-content {
+  width: 760px !important;
+  max-width: 760px !important;
+}
+
+/* Text elements use the article width */
+main.article-grid article p,
+main.article-grid article ul,
+main.article-grid article ol,
+main.article-grid article dl,
+main.article-grid article blockquote,
+main.article-grid article h1,
+main.article-grid article h2,
+main.article-grid article h3,
+main.article-grid article h4,
+main.article-grid article h5,
+main.article-grid article h6 {
+  max-width: 100% !important;
+}
+
+/* Code/admonitions/tables stay inside the article */
+main.article-grid article pre,
+main.article-grid article .highlight,
+main.article-grid article .admonition,
+main.article-grid article table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ============================================================
+   Right contents panel
+   ============================================================ */
+
+/* Keep the right TOC narrow */
+main.article-grid nav[aria-label="Contents"],
+main.article-grid .myst-outline,
+main.article-grid .myst-toc {
+  width: 280px !important;
+  max-width: 280px !important;
+  min-width: 280px !important;
+}
+
+/* Do not let TOC links stretch */
+main.article-grid nav[aria-label="Contents"] a,
+main.article-grid .myst-outline a,
+main.article-grid .myst-toc a {
+  width: auto !important;
+  max-width: 260px !important;
+  white-space: normal !important;
+}

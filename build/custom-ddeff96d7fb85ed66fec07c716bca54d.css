@@ -1,0 +1,108 @@
+/* ============================================================
+   MyST Book Theme layout tweaks
+   Keep native grid behavior, only widen readable area.
+   ============================================================ */
+
+:root {
+  --left-sidebar-width: clamp(240px, 22vw, 340px);
+  --right-toc-width: clamp(190px, 16vw, 260px);
+}
+
+/* Left sidebar width */
+.max-w-\[350px\],
+.xl\:max-w-\[350px\],
+.max-xl\:max-w-\[350px\] {
+  max-width: var(--left-sidebar-width) !important;
+}
+
+.myst-primary-sidebar,
+.myst-primary-sidebar-pointer,
+.myst-primary-sidebar-content,
+.myst-primary-sidebar-nav,
+.myst-primary-sidebar-toc,
+.myst-primary-sidebar-footer {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+}
+
+/* Remove prose width cap (65ch) */
+.article,
+.prose,
+main.article-grid article,
+main.article-grid .myst-content,
+main.article-grid .article-content {
+  max-width: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Use broader track range on desktop while keeping right TOC column */
+@media (min-width: 1024px) {
+  main.article-grid > article.article-grid {
+    box-sizing: border-box !important;
+    padding-right: calc(var(--right-toc-width) + 1rem) !important;
+  }
+
+  main.article-grid > article.article-grid > * {
+    grid-column: page-start / body-end !important;
+    min-width: 0 !important;
+  }
+
+  main.article-grid > article.article-grid > .lg\:col-margin-right,
+  main.article-grid > article.article-grid > .col-margin-right {
+    position: fixed !important;
+    top: 60px !important;
+    right: 0 !important;
+    width: var(--right-toc-width) !important;
+    max-width: var(--right-toc-width) !important;
+    min-width: var(--right-toc-width) !important;
+    max-height: calc(100vh - 72px) !important;
+    overflow-y: auto !important;
+    grid-column: auto !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  main.article-grid {
+    margin-left: var(--left-sidebar-width) !important;
+    width: calc(100vw - var(--left-sidebar-width)) !important;
+    max-width: calc(100vw - var(--left-sidebar-width)) !important;
+  }
+}
+
+@media (max-width: 1279px) {
+  main.article-grid {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  main.article-grid > article.article-grid {
+    padding-right: 0 !important;
+  }
+
+  main.article-grid > article.article-grid > .lg\:col-margin-right,
+  main.article-grid > article.article-grid > .col-margin-right {
+    position: static !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* Keep code/tables readable when column gets narrow during resize */
+main.article-grid article pre,
+main.article-grid article .highlight,
+main.article-grid article table {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+main p {
+  line-height: 1.65;
+}

@@ -1,0 +1,112 @@
+/* ============================================================
+   MyST Book Theme layout tweaks
+   Keep native grid behavior, only widen readable area.
+   ============================================================ */
+
+:root {
+  --left-sidebar-width: clamp(255px, 23vw, 360px);
+  --right-toc-width: clamp(190px, 16vw, 260px);
+}
+
+/* Left sidebar width */
+.max-w-\[350px\],
+.xl\:max-w-\[350px\],
+.max-xl\:max-w-\[350px\] {
+  max-width: var(--left-sidebar-width) !important;
+}
+
+.myst-primary-sidebar,
+.myst-primary-sidebar-pointer,
+.myst-primary-sidebar-content,
+.myst-primary-sidebar-nav,
+.myst-primary-sidebar-toc,
+.myst-primary-sidebar-footer {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+}
+
+/* Remove prose width cap (65ch) */
+.article,
+.prose,
+main.article-grid article,
+main.article-grid .myst-content,
+main.article-grid .article-content {
+  max-width: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Wide desktop: content fills space between left sidebar and right TOC */
+@media (min-width: 1280px) {
+  main.article-grid > article.article-grid {
+    grid-column: body-start / screen-end !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) var(--right-toc-width) !important;
+    column-gap: clamp(0.75rem, 1.2vw, 1.25rem) !important;
+    align-items: start !important;
+    margin-left: 12px !important;
+  }
+
+  main.article-grid > article.article-grid > * {
+    grid-column: 1 !important;
+    min-width: 0 !important;
+  }
+
+  main.article-grid > article.article-grid > .lg\:col-margin-right,
+  main.article-grid > article.article-grid > .col-margin-right {
+    display: block !important;
+    visibility: visible !important;
+    grid-column: 2 !important;
+    justify-self: stretch !important;
+    position: sticky !important;
+    top: 60px !important;
+    height: 0 !important;
+    margin-left: 0 !important;
+
+    width: var(--right-toc-width) !important;
+    max-width: var(--right-toc-width) !important;
+    min-width: var(--right-toc-width) !important;
+
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  main.article-grid > article.article-grid > .lg\:col-margin-right > nav,
+  main.article-grid > article.article-grid > .col-margin-right > nav {
+    max-height: calc(100vh - 72px) !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  main.article-grid > article.article-grid > .lg\:col-margin-right,
+  main.article-grid > article.article-grid > .col-margin-right {
+    position: static !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* Ultra-wide only: nudge article left a bit to reduce excess gap */
+@media (min-width: 1700px) {
+  main.article-grid > article.article-grid {
+    grid-column: body-outset-start / screen-end !important;
+    margin-left: clamp(-95px, calc((100vw - 1700px) * -0.12), 0px) !important;
+  }
+}
+
+/* Keep code/tables readable when column gets narrow during resize */
+main.article-grid article pre,
+main.article-grid article .highlight,
+main.article-grid article table {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+main p {
+  line-height: 1.65;
+}

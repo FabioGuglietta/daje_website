@@ -1,0 +1,236 @@
+/* ============================================================
+   MyST Book Theme custom layout
+   ============================================================ */
+
+:root {
+  --left-sidebar-width: 460px;
+  --main-left-offset: 370px;
+
+  --right-toc-width: 220px;
+  --left-gap: 0rem;
+  --right-gap: 0rem;
+  --toc-gap: 0rem;
+}
+
+/* ============================================================
+   Left sidebar
+   ============================================================ */
+
+/* Override MyST/Tailwind fixed sidebar width */
+.max-w-\[350px\],
+.xl\:max-w-\[350px\],
+.max-xl\:max-w-\[350px\] {
+  max-width: var(--left-sidebar-width) !important;
+}
+
+/* Left sidebar wrappers */
+.myst-primary-sidebar,
+.myst-primary-sidebar-pointer,
+.myst-primary-sidebar-content,
+.myst-primary-sidebar-nav,
+.myst-primary-sidebar-toc,
+.myst-primary-sidebar-footer {
+  width: var(--left-sidebar-width) !important;
+  min-width: var(--left-sidebar-width) !important;
+  max-width: var(--left-sidebar-width) !important;
+  overflow: visible !important;
+}
+
+/* Left sidebar links */
+.myst-primary-sidebar a {
+  font-size: 0.88rem;
+  line-height: 1.28;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* Undo Tailwind word breaking inside sidebar */
+.myst-primary-sidebar .break-words {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* ============================================================
+   Main article area: fill all space between sidebars
+   ============================================================ */
+
+main.article-grid {
+  position: fixed !important;
+
+  top: 5rem !important;
+  left: var(--main-left-offset) !important;
+  right: calc(var(--right-toc-width) + var(--toc-gap)) !important;
+  bottom: 0 !important;
+
+  width: auto !important;
+  max-width: none !important;
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  display: block !important;
+}
+
+/* Article fills the whole available central area */
+main.article-grid article {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+/* Remove internal width limits */
+main.article-grid article > div,
+main.article-grid article section,
+main.article-grid .myst-content,
+main.article-grid .prose,
+main.article-grid .article-content,
+main.article-grid .article {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+/* Force text and headings to use the full article width */
+main.article-grid article p,
+main.article-grid article ul,
+main.article-grid article ol,
+main.article-grid article dl,
+main.article-grid article blockquote,
+main.article-grid article h1,
+main.article-grid article h2,
+main.article-grid article h3,
+main.article-grid article h4,
+main.article-grid article h5,
+main.article-grid article h6 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Code, notes, tables use full width too */
+main.article-grid article pre,
+main.article-grid article .highlight,
+main.article-grid article .admonition,
+main.article-grid article table {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+/* ============================================================
+   Right contents panel
+   ============================================================ */
+
+/* Attach the right TOC to the right edge of the window */
+main.article-grid > aside,
+main.article-grid .myst-outline,
+main.article-grid .myst-toc,
+main.article-grid nav[aria-label="Contents"] {
+  position: fixed !important;
+
+  top: 5rem !important;
+  right: 0 !important;
+
+  width: var(--right-toc-width) !important;
+  max-width: var(--right-toc-width) !important;
+  min-width: var(--right-toc-width) !important;
+
+  max-height: calc(100vh - 7rem) !important;
+  overflow-y: auto !important;
+
+  padding-right: 0.5rem !important;
+}
+
+/* Right contents links */
+main.article-grid nav[aria-label="Contents"] a,
+main.article-grid .myst-outline a,
+main.article-grid .myst-toc a {
+  width: auto !important;
+  max-width: calc(var(--right-toc-width) - 20px) !important;
+  white-space: normal !important;
+}
+
+/* ============================================================
+   Readability
+   ============================================================ */
+
+main p {
+  line-height: 1.65;
+}
+
+/* Code blocks */
+pre {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* ============================================================
+   Force central text to use the full available width
+   ============================================================ */
+
+/* The central panel itself */
+main.article-grid {
+  margin-left: var(--main-left-offset) !important;
+  margin-right: calc(var(--right-toc-width) + var(--toc-gap)) !important;
+
+  width: auto !important;
+  max-width: none !important;
+
+  display: block !important;
+  transform: none !important;
+}
+
+/* Article wrapper */
+main.article-grid article {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+/* Common MyST/Tailwind internal width limiters */
+main.article-grid article .prose,
+main.article-grid article .myst-content,
+main.article-grid article .article-content,
+main.article-grid article .max-w-prose,
+main.article-grid article .max-w-screen-md,
+main.article-grid article .max-w-screen-lg,
+main.article-grid article .max-w-screen-xl,
+main.article-grid article [class*="max-w-"] {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+/* Direct children */
+main.article-grid article > * {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Text blocks */
+main.article-grid article p,
+main.article-grid article ul,
+main.article-grid article ol,
+main.article-grid article blockquote,
+main.article-grid article h1,
+main.article-grid article h2,
+main.article-grid article h3,
+main.article-grid article h4,
+main.article-grid article h5,
+main.article-grid article h6 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Code, tables, admonitions */
+main.article-grid article pre,
+main.article-grid article .highlight,
+main.article-grid article .admonition,
+main.article-grid article table {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
