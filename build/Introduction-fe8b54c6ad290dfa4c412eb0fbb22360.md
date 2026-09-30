@@ -1,0 +1,172 @@
+# Course contents
+
+**DAJE — Designing Algorithms with Judicious Efficiency**
+
+Marcello Sega & Fabio Guglietta
+
+<!-- Keep this index aligned with the student-facing toc in myst.yml. -->
+
+
+## Fundamentals
+
+
+### Introduction To UNIX
+
+- [From Hardware to Operating Systems](1-Fundamentals/1-Introduction_to_UNIX/0-Historical_perspective.md)
+- [Introduction to Operating Systems](1-Fundamentals/1-Introduction_to_UNIX/1-Unix_and_Linux_operating_systems_BASIC.md)
+- [The Kernel](1-Fundamentals/1-Introduction_to_UNIX/5-kernel_and_system_calls.md)
+- [The Shell and Basic Unix Commands: Navigating the Unix Shell](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt1.md)
+- [The Shell and Basic Unix Commands: File Operations and Wildcards in the Unix Shell](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt2.md)
+- [The Shell and Basic Unix Commands: Creating and inspecting files](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt3.md)
+- [The Shell and Basic Unix Commands: Redirection and pipes](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt4.md)
+- [Example of Basic Unix Commands](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_SUMMARY.md)
+- [4-Bash_Job_Control_System_aka_Multitasking](1-Fundamentals/1-Introduction_to_UNIX/4-Bash_Job_Control_System_aka_Multitasking.md)
+- [More Bash Tools](1-Fundamentals/1-Introduction_to_UNIX/8-More_Bash_Tools.md)
+- [The Unix filesystem: Structure](1-Fundamentals/1-Introduction_to_UNIX/90-unix_filesystem.md)
+- [The Unix Filesystem: Links](1-Fundamentals/1-Introduction_to_UNIX/91-filesystem_links.md)
+- [Connecting to remote machines with ssh](1-Fundamentals/1-Introduction_to_UNIX/100-Connecting_to_remote_machines_with_ssh.md)
+
+### Text Processing
+
+- [Text Processing in the Shell](1-Fundamentals/10-Text_processing/10-Text_processing_in_the_shell.md)
+- [sed](1-Fundamentals/10-Text_processing/30-Sed.md)
+- [sed - Practical Examples](1-Fundamentals/10-Text_processing/31-Sed_examples.md)
+- [Regular Expressions (regex)](1-Fundamentals/10-Text_processing/40-regex.md)
+- [Regular Expressions (regex) - Practical Examples](1-Fundamentals/10-Text_processing/41-regex_examples.md)
+- [awk](1-Fundamentals/10-Text_processing/50-awk.md)
+- [awk - Practical Examples](1-Fundamentals/10-Text_processing/51-awk_exercises.md)
+
+### Building Code
+
+- [The language of the CPU](1-Fundamentals/200-Building_code/1-compilers_BASIC.md)
+- [Compiling C Code on Linux/Unix Systems: A Practical Introduction](1-Fundamentals/200-Building_code/2-Introduction.md)
+- [Compiling C Code on Linux/Unix Systems: next steps](1-Fundamentals/200-Building_code/3-Next_steps.md)
+
+### The C Programming Language Basics
+
+- [Trapezoidal Rule ](1-Fundamentals/300-The_C_programming_language_basics/1-C_basics.md)
+- [Call by Value, Call by Refrence and Pointers](1-Fundamentals/300-The_C_programming_language_basics/2-C_pointers.md)
+- [Two ways of declaring and using arrays: Static vs Dynamic Memory Allocation](1-Fundamentals/300-The_C_programming_language_basics/3-C_arrays.md)
+- [Multidimensional arrays](1-Fundamentals/300-The_C_programming_language_basics/4-C_multiDim_arrays.md)
+- [Pointers and Arrays](1-Fundamentals/300-The_C_programming_language_basics/5-C_arrays_and_pointers.md)
+- [Array Indexing: Fortran vs. C](1-Fundamentals/300-The_C_programming_language_basics/6-array_indexing.md)
+- [7-summary](1-Fundamentals/300-The_C_programming_language_basics/7-summary.md)
+- [Read command line arguments: argc and argv](1-Fundamentals/300-The_C_programming_language_basics/8-C_passing_arguments.md)
+- [C and strings, a good excuse to discus the memory layout](1-Fundamentals/300-The_C_programming_language_basics/9-C_strings_and_memory_layout.md)
+- [Structures](1-Fundamentals/300-The_C_programming_language_basics/10-C_struc.md)
+- [File Input/Output: Reading and Writing Files](1-Fundamentals/300-The_C_programming_language_basics/11-C_IO_files.md)
+- [Modular Programming in C](1-Fundamentals/300-The_C_programming_language_basics/12-C_modular_programming.md)
+- [Libraries](1-Fundamentals/300-The_C_programming_language_basics/13-libraries.md)
+
+### The Fortran Programming Language Basics
+
+- [Trapezoidal Rule ](1-Fundamentals/400-The_Fortran_programming_language_basics/1-Fortran_BASIC.md)
+- [Arrays](1-Fundamentals/400-The_Fortran_programming_language_basics/2-Fortran_arrays_BASIC.md)
+- [Multidimensional arrays](1-Fundamentals/400-The_Fortran_programming_language_basics/3-Fortran_multiDim_arrays.md)
+- [Passing arguments in Fortran](1-Fundamentals/400-The_Fortran_programming_language_basics/4-Fortran_passing_arguments.md)
+- [Derived Types](1-Fundamentals/400-The_Fortran_programming_language_basics/5-Fortran_types.md)
+- [File Input/Output: Reading and Writing Files](1-Fundamentals/400-The_Fortran_programming_language_basics/6-Fortran_IO_files.md)
+- [Modular Programming in Fortran](1-Fundamentals/400-The_Fortran_programming_language_basics/7-Fortran_modules.md)
+
+### Object Oriented Programming
+
+- [Object-Oriented Programming](1-Fundamentals/500-Object-oriented_programming/1-Introduction.md)
+
+### Exercises In C And Fortran
+
+- [Exercises related to C_BASIC](1-Fundamentals/600-Exercises_in_C_and_Fortran/1-Exercises_BASIC.md)
+- [Brownian Motion and the Diffusion Coefficient](1-Fundamentals/600-Exercises_in_C_and_Fortran/2-Exercise_Brownian_motion.md)
+- [Estimate the Uncertainty of a Derived Quantity Using Bootstrap](1-Fundamentals/600-Exercises_in_C_and_Fortran/3-Exercise_Bootstrap.md)
+- [Exercises related to arrays and pointers](1-Fundamentals/600-Exercises_in_C_and_Fortran/4-Exercises_arrays_pointers.md)
+- [Physics Background](1-Fundamentals/600-Exercises_in_C_and_Fortran/5-Exercises_Newton.md)
+- [Gaussian quadrature](1-Fundamentals/600-Exercises_in_C_and_Fortran/6-Exercise_Gaussian_quadrature.md)
+
+### Best Practice
+
+- [No programmer is an island](1-Fundamentals/700-Best_practice/1-Introduction.md)
+
+## Advanced
+
+
+### Know Your Machine
+
+- [Stack and Heap Memory](2-Advanced/100-Know_your_machine/1-Memory.md)
+- [How Numbers Are Represented in a Modern CPU (and Why You Should Care)](2-Advanced/100-Know_your_machine/2-Number_Representations.md)
+- [Handling Roundoff Errors in Scientific Computing](2-Advanced/100-Know_your_machine/3-Roundoff.md)
+- [The architecture of a CPU](2-Advanced/100-Know_your_machine/4-x86_history.md)
+- [Basics of x86-64 assembly language](2-Advanced/100-Know_your_machine/5-x86_assembly.md)
+- [Introduction to SIMD instructions on x86-64](2-Advanced/100-Know_your_machine/6-simd_instructions.md)
+
+### Low Level Optimization
+
+- [SIMD Architectures in Practice: From Laptops to Supercomputers](2-Advanced/200-Low_level_optimization/1-modern_CPU_architecture_panorama.md)
+- [Getting close to peak performance when optimizing code: SIMD, loop unrolling and associative algebra](2-Advanced/200-Low_level_optimization/2-SIMD_loop_unrolling_and_associative_algebra.md)
+
+## Libraries And Algorithms
+
+
+### Linear Algebra
+
+- [1-BLAS](3-Libraries_and_Algorithms/1-Linear_Algebra/1-BLAS.md)
+- [LAPACK](3-Libraries_and_Algorithms/1-Linear_Algebra/2-Lapack.md)
+
+### Linear Algebra Example LU Decomposition
+
+- [LU Decomposition](3-Libraries_and_Algorithms/2-Linear_Algebra_example_LU_decomposition/1-Introduction.md)
+- [Forward substitution: an example](3-Libraries_and_Algorithms/2-Linear_Algebra_example_LU_decomposition/2-forward_example.md)
+- [LU decomposition for a 3x3 matrix](3-Libraries_and_Algorithms/2-Linear_Algebra_example_LU_decomposition/3-example_LU.md)
+- [Back Substitution: an example](3-Libraries_and_Algorithms/2-Linear_Algebra_example_LU_decomposition/4-backward_example.md)
+- [Extraction of spectral densities from lattice correlators](3-Libraries_and_Algorithms/2-Linear_Algebra_example_LU_decomposition/5-spectral_density.md)
+
+### Lecture FFT
+
+- [Fast Fourier Transform (FFT)](3-Libraries_and_Algorithms/3-Lecture-FFT/1-Introduction.md)
+- [Example Walkthrough: ( N = 8 )](3-Libraries_and_Algorithms/3-Lecture-FFT/2-example.md)
+
+## HPC
+
+- [Modern HPC systems and the programming landscape](4-HPC/1-Modern_HPC_Systems_and_programming_landscape.md)
+
+### MPI And Open MP
+
+- [Introduction to Multi-CPU Parallelization](4-HPC/2-MPI_and_OpenMP/1-Introduction.md)
+- [OpenMP](4-HPC/2-MPI_and_OpenMP/2-OpenMP.md)
+- [Message Passing Interface (MPI)](4-HPC/2-MPI_and_OpenMP/3-MPI.md)
+- [Point-to-point communications](4-HPC/2-MPI_and_OpenMP/4-MPI_SndRcv.md)
+- [Essential MPI Functions Beyond the Basics](4-HPC/2-MPI_and_OpenMP/5-MPI_other_functions.md)
+- [Cartesian Topologies in MPI](4-HPC/2-MPI_and_OpenMP/6-MPI_Cartesian.md)
+- [Strong scaling and weak scaling  in Parallel Computing](4-HPC/2-MPI_and_OpenMP/7-performances_strong_weak_scaling.md)
+
+### CUDA
+
+- [GPU Computing](4-HPC/3-CUDA/1-Introduction.md)
+- [CUDA](4-HPC/3-CUDA/2-CUDA.md)
+- [Query GPU properties](4-HPC/3-CUDA/3-query_GPU_prop.md)
+- [Scaling](4-HPC/3-CUDA/4-scaling.md)
+
+## Basics Of Unix System Programming
+
+- [multitasking](5-Basics_of_Unix_System_Programming/multitasking.md)
+
+## Tools
+
+
+### Building Code
+
+- [1-make](6-Tools/1-Building_Code/1-make.md)
+- [2-CMake](6-Tools/1-Building_Code/2-CMake.md)
+
+### Debuggers And Typical Problems That Require Them
+
+- [GDB](6-Tools/2-Debuggers_and_typical_problems_that_require_them/1-gdb.md)
+
+### Git For Version Control
+
+- [Getting a Git repository](6-Tools/3-Git_for_version_control/1-basics.md)
+- [Branching](6-Tools/3-Git_for_version_control/2-branching.md)
+- [Git - Version Control System](6-Tools/3-Git_for_version_control/3-Introduction.md)
+- [Collaboration and testing](6-Tools/3-Git_for_version_control/4-remote.md)
+
+### Text Editors
+
+- [A Short Introduction to VIM](6-Tools/4-Text_editors/1-Vim.md)
