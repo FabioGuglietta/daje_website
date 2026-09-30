@@ -182,73 +182,70 @@
     <loc>http://localhost:3000/simd-loop-unrolling-and-associative-algebra</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/compilers-basic-1</loc>
+    <loc>http://localhost:3000/blas</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/lapack</loc>
   </url>
   <url>
     <loc>http://localhost:3000/introduction-3</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/next-steps-1</loc>
+    <loc>http://localhost:3000/forward-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-basics-1</loc>
+    <loc>http://localhost:3000/example-lu</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-pointers-1</loc>
+    <loc>http://localhost:3000/backward-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-arrays-1</loc>
+    <loc>http://localhost:3000/spectral-density</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-multidim-arrays-1</loc>
+    <loc>http://localhost:3000/introduction-4</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-arrays-and-pointers-1</loc>
+    <loc>http://localhost:3000/example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/array-indexing-1</loc>
+    <loc>http://localhost:3000/modern-hpc-systems-and-programming-landscape</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/summary-1</loc>
+    <loc>http://localhost:3000/introduction-5</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-passing-arguments-1</loc>
+    <loc>http://localhost:3000/openmp</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-strings-and-memory-layout-1</loc>
+    <loc>http://localhost:3000/mpi</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-struc-1</loc>
+    <loc>http://localhost:3000/mpi-sndrcv</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-io-files-1</loc>
+    <loc>http://localhost:3000/mpi-other-functions</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-modular-programming-1</loc>
+    <loc>http://localhost:3000/mpi-cartesian</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/libraries-1</loc>
+    <loc>http://localhost:3000/performances-strong-weak-scaling</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/fortran-basic-1</loc>
+    <loc>http://localhost:3000/introduction-6</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/fortran-arrays-basic-1</loc>
+    <loc>http://localhost:3000/cuda</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/fortran-multidim-arrays-1</loc>
+    <loc>http://localhost:3000/query-gpu-prop</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/fortran-passing-arguments-1</loc>
+    <loc>http://localhost:3000/scaling</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/fortran-types-1</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/fortran-io-files-1</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/fortran-modules-1</loc>
+    <loc>http://localhost:3000/multitasking</loc>
   </url>
   <url>
     <loc>http://localhost:3000/make</loc>
@@ -266,7 +263,7 @@
     <loc>http://localhost:3000/branching</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-4</loc>
+    <loc>http://localhost:3000/introduction-7</loc>
   </url>
   <url>
     <loc>http://localhost:3000/remote</loc>
