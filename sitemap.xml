@@ -5,12 +5,6 @@
     <loc>http://localhost:3000</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notes</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/introduction</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/historical-perspective</loc>
   </url>
   <url>
@@ -50,9 +44,6 @@
     <loc>http://localhost:3000/connecting-to-remote-machines-with-ssh</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/shell-and-basic-unix-commands-basic</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/text-processing-in-the-shell</loc>
   </url>
   <url>
@@ -77,7 +68,7 @@
     <loc>http://localhost:3000/compilers-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-1</loc>
+    <loc>http://localhost:3000/introduction</loc>
   </url>
   <url>
     <loc>http://localhost:3000/next-steps</loc>
@@ -122,15 +113,6 @@
     <loc>http://localhost:3000/libraries</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/c-arrays-multidim</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/c-pointers-basic</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/c-reference-vs-value</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/fortran-basic</loc>
   </url>
   <url>
@@ -152,7 +134,7 @@
     <loc>http://localhost:3000/fortran-modules</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-2</loc>
+    <loc>http://localhost:3000/introduction-1</loc>
   </url>
   <url>
     <loc>http://localhost:3000/exercises-basic</loc>
@@ -173,7 +155,7 @@
     <loc>http://localhost:3000/exercise-gaussian-quadrature</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-3</loc>
+    <loc>http://localhost:3000/introduction-2</loc>
   </url>
   <url>
     <loc>http://localhost:3000/memory</loc>
@@ -200,22 +182,13 @@
     <loc>http://localhost:3000/simd-loop-unrolling-and-associative-algebra</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/d3q19</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/d3q19-simd</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/fma</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/blas</loc>
   </url>
   <url>
     <loc>http://localhost:3000/lapack</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-4</loc>
+    <loc>http://localhost:3000/introduction-3</loc>
   </url>
   <url>
     <loc>http://localhost:3000/forward-example</loc>
@@ -230,7 +203,7 @@
     <loc>http://localhost:3000/spectral-density</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-5</loc>
+    <loc>http://localhost:3000/introduction-4</loc>
   </url>
   <url>
     <loc>http://localhost:3000/example</loc>
@@ -239,7 +212,7 @@
     <loc>http://localhost:3000/modern-hpc-systems-and-programming-landscape</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-6</loc>
+    <loc>http://localhost:3000/introduction-5</loc>
   </url>
   <url>
     <loc>http://localhost:3000/openmp</loc>
@@ -260,7 +233,7 @@
     <loc>http://localhost:3000/performances-strong-weak-scaling</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-7</loc>
+    <loc>http://localhost:3000/introduction-6</loc>
   </url>
   <url>
     <loc>http://localhost:3000/cuda</loc>
@@ -290,7 +263,7 @@
     <loc>http://localhost:3000/branching</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduction-8</loc>
+    <loc>http://localhost:3000/introduction-7</loc>
   </url>
   <url>
     <loc>http://localhost:3000/remote</loc>
