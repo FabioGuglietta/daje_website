@@ -1,4 +1,4 @@
-# The Shell and Basic Unix Commands: Redirection and pipes
+# Redirection and Pipes
 
 One of the most powerful features of the shell is the ability to **connect commands together**.
 

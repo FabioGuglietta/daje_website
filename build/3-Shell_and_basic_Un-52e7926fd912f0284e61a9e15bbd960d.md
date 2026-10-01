@@ -1,4 +1,4 @@
-# The Shell and Basic Unix Commands: Navigating the Unix Shell
+# Getting Started with the Unix Shell
 
 This document introduces some basic Unix commands. You should try them in a terminal while reading: using commands directly is usually the fastest way to remember them.
 Using a **command-line interface** is one of the most powerful ways to interact with a computer. Unix, Linux, and macOS provide so-called **shells**, that is, command-line interpreters running inside **terminals**. A shell allows you to invoke, or run, other programs by typing commands on the keyboard.
@@ -174,162 +174,47 @@ This is a test
 ```
 Later, we will see that this output can also be redirected to a file.
 
-## 5. Paths: absolute, relative, `.`, `..`, `~`
+## 5. Moving around the filesystem
 
-Files and directories in Unix-like systems are organized in a **directory tree**.
-
-A **path** tells the shell where a file or directory is located.
-
-For example, imagine the following simplified directory tree:
-```text
-/
-└── home
-    └── m.sega
-        ├── Applications
-        └── Documents
-            ├── Articles
-            ├── Notes
-            └── Minutes.pdf
-```
-The top of the tree is the root directory, written as:
-```text
-/
-```
-Inside `/`, there is a directory called `home`. Inside `home`, there is a directory called `m.sega`. Inside `m.sega`, there are two directories: `Applications` and `Documents`.
-
-The file `Minutes.pdf` is inside the directory `Documents`.
-
-Therefore, the full path of `Minutes.pdf` is:
-```text
-/home/m.sega/Documents/Minutes.pdf
-```
-This representation is useful because it allows us to describe the position of every file or directory in the system.
-
-There are two main kinds of paths:
-- **absolute paths**;
-- **relative paths**.
-
-### Absolute paths
-An **absolute path** starts from the root directory `/`.
-For example:
-```text
-/home/m.sega/Documents
-```
-This path identifies the directory `Documents` inside the home directory of the user `m.sega`.
-
-Because it starts with `/`, it does not depend on the directory where you currently are.
-
-For example, this command lists the content of that directory:
-```bash
-> ls /home/m.sega/Documents
-```
-It will work whether your current directory is `/home/m.sega`, `/tmp`, `/home/m.sega/Documents/Articles`, or any other directory.
-
-### Relative paths
-
-A **relative path** is interpreted starting from the current directory.
-For example, suppose your current directory is:
-```text
-/home/m.sega
-```
-
-and suppose the directory tree is:
-```text
-/home/m.sega
-├── Applications
-└── Documents
-    ├── Articles
-    ├── Notes
-    └── Minutes.pdf
-```
-Then the relative path:
-```text
-Documents/Articles
-```
-means:
-```text
-starting from /home/m.sega,
-enter Documents,
-then enter Articles
-```
-Therefore, it refers to the absolute path:
-```text
-/home/m.sega/Documents/Articles
-```
-So these two commands refer to the same directory:
-```bash
-> ls Documents/Articles
-> ls /home/m.sega/Documents/Articles
-```
-The **first command uses a relative path**, because `Documents/Articles` is interpreted starting from the current directory.
-
-The **second command uses an absolute path**, because `/home/m.sega/Documents/Articles` starts from the root directory `/`.
-
-If your current directory changed, for example to:
-```text
-/tmp
-```
-then the relative path:
-```
-Documents/Articles
-```
-would no longer refer to:
-```
-/home/m.sega/Documents/Articles
-```
-because relative paths always depend on the directory where you currently are.
-
-### Special path symbols
-
-Some special symbols are frequently used in paths.
-```bash
-~	  # your home directory
-.	  # the current directory
-..	# the parent directory
-./	# a path starting from the current directory
-../	# a path starting from the parent directory
-```
-
-For example:
-```bash
-> ls ~  # lists the content of your home directory.
-> ls .  # lists the content of the current directory.
-> ls .. # lists the content of the parent directory.
-```
-If your current directory is:
-```bash
-/home/m.sega/Documents
-```
-then:
-```bash
-.   # means: /home/m.sega/Documents
-```
-while:
-```bash
-..   # means: /home/m.sega
-```
-
-The notation `./` is often used when we want to explicitly say “starting from the current directory”.
-
-For example:
-```bash
-> ls ./Documents
-```
-means:
-```bash
-> ls Documents
-```
-provided that `Documents` is inside the current directory.
-
-Similarly:
-```bash
-> ls ../Documents
-```
-means: go one level up, then look for a directory called `Documents`.
-
-## 6. Moving around the filesystem
+The examples below use absolute and relative paths, including `.`, `..`, and
+`~`. Their meaning is explained in
+[Absolute and Relative Paths](../1-Operating_Systems_and_Unix/90-unix_filesystem.md#absolute-and-relative-paths).
 
 To move from one directory to another, we use the command `cd`, which means **change directory**.
+
+### Inspecting directories with `ls`
+
+Before moving to another directory, you can inspect its contents with `ls`.
+Suppose the current directory is `/home/m.sega`:
+
+```bash
+> pwd
+/home/m.sega
+> ls Documents
+Articles  Notes  Minutes.pdf
+> ls ./Documents
+Articles  Notes  Minutes.pdf
+> ls /home/m.sega/Documents
+Articles  Notes  Minutes.pdf
+```
+
+The first two paths are relative; the third is absolute. Here they identify
+the same directory. Unlike `cd`, `ls` does not change the current directory:
+
+```bash
+> pwd
+/home/m.sega
+```
+
+You can also inspect the current directory and its parent:
+
+```bash
+> ls .
+> ls ..
+```
+
+If you are in `/home/m.sega/Documents`, `ls ../Applications` lists the
+contents of `/home/m.sega/Applications` without moving there.
 
 ### Going to another directory
 Suppose we are in the directory:
@@ -404,7 +289,14 @@ The same result can be obtained with:
 ```bash
 > cd ~
 ```
-because `~` represents the home directory.
+Here the shell expands an unquoted `~` to your home directory. Unlike `.`
+and `..`, `~` is shell shorthand rather than a filesystem entry. You can
+also use it with `ls`:
+
+```bash
+> ls ~
+> ls ~/Documents
+```
 
 ### Going back to the previous directory
 

@@ -1,4 +1,4 @@
-# The Shell and Basic Unix Commands: File Operations and Wildcards in the Unix Shell
+# File Operations and Wildcards
 ## Creating, copying, moving, and deleting files
 In this section we introduce some common commands to create, copy, move, rename, and delete files and directories.
 We will use:

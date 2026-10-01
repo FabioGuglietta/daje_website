@@ -1,4 +1,4 @@
-# The Unix Filesystem: Links
+# Hard Links and Symbolic Links
 
 Unix has two main kinds of links:
 

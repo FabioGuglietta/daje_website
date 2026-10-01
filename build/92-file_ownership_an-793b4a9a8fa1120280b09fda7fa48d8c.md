@@ -1,64 +1,10 @@
-# The Unix filesystem: Structure
+# File Ownership and Permissions
 
-Unix systems organize files in a single tree-like structure called the **filesystem**.
+The [Unix filesystem](../1-Operating_Systems_and_Unix/90-unix_filesystem.md) organizes files and directories
+in a single tree. Ownership and permissions determine who can access them
+and which operations they can perform.
 
-The top of the tree is the **root directory**:
-
-```text
-/
-```
-
-Every file and directory is located somewhere below `/`.
-
-Example:
-
-```text
-/
-├── home/
-│   └── fabio/
-│       ├── notes.txt
-│       └── code/
-├── bin/
-├── etc/
-├── dev/
-└── tmp/
-```
-
-The path:
-
-```text
-/home/fabio/notes.txt
-```
-
-means:
-
-```text
-start from /
-enter home
-enter fabio
-find notes.txt
-```
-
-In Unix, many things are represented as files: normal files, directories, terminals, disks, and devices.
-
----
-
-# Files and directories
-
-A **file** contains data.
-
-A **directory** contains names of other files and directories.
-
-Common directories are:
-
-```text
-/home     user directories
-/etc      system configuration files
-/bin      essential commands
-/usr      installed programs and libraries
-/tmp      temporary files
-/dev      device files
-```
+## Reading a long listing
 
 The command:
 
@@ -103,7 +49,7 @@ brw-rw----   block device
 
 ---
 
-# Owner and group
+## Owner and group
 
 Every file has:
 
@@ -134,7 +80,7 @@ For example, if several users belong to the group `project`, then a file owned b
 
 ---
 
-# Permissions
+## Permissions
 
 Unix permissions define who can **read, modify, or execute** a file.
 
@@ -189,7 +135,7 @@ users in the group can read it
 everyone else can read it
 ```
 
-## Permissions on regular files
+### Permissions on regular files
 
 For regular files, permissions have this meaning:
 
@@ -213,7 +159,7 @@ group: read, execute
 other: read only
 ```
 
-## Permissions on directories
+### Permissions on directories
 
 For directories, permissions have a different meaning.
 
@@ -253,11 +199,16 @@ ls directory
 
 Without `w`, you cannot create or delete files inside it.
 
-To create or delete a file inside a directory, you need write permission on the directory, not only on the file.
+To create, delete, or rename entries, you normally need both `w` and `x`
+on the containing directory. Access through a path also requires `x` on
+its parent directories. Deleting a file depends on the containing directory's
+permissions, rather than write permission on the file itself. Additional
+restrictions, such as the sticky bit on shared directories like `/tmp`, can
+limit deletion even when the directory is writable.
 
 ---
 
-# Changing permissions with `chmod`
+## Changing permissions with `chmod`
 
 The command `chmod` changes file permissions.
 
@@ -341,7 +292,7 @@ Common modes are:
 
 ---
 
-# Changing ownership with `chown`
+## Changing ownership with `chown`
 
 The owner and group of a file can be changed.
 
@@ -376,11 +327,13 @@ chgrp project data.txt
 
 This sets the group of `data.txt` to `project`.
 
-On most Unix systems, changing ownership requires administrator privileges.
+Changing a file's owner normally requires administrator privileges. The owner
+can usually change its group to a group they belong to; other group changes
+require administrator privileges.
 
 ---
 
-# The root user
+## The root user
 
 The **root user** is the system administrator.
 
@@ -429,57 +382,14 @@ use root privileges only when necessary
 
 ---
 
-# Summary
+## Summary
 
-The Unix filesystem is a tree starting from:
-
-```text
-/
-```
-
-Everything is placed somewhere below this root directory.
-
-Every file has:
-
-```text
-owner
-group
-permissions
-```
-
-Permissions are divided into:
-
-```text
-user
-group
-other
-```
-
-The basic permissions are:
-
-```text
-r    read
-w    write
-x    execute
-```
-
-The root user is the administrator and can override most permission restrictions.
-
-Ownership can be changed with:
-
-```bash
-chown
-chgrp
-```
-
-Permissions can be changed with:
-
-```bash
-chmod
-```
-
-The central Unix idea is:
-
-```text
-everything is organized as a file in a single filesystem tree
-```
+- Each file and directory has an owner, a group, and access permissions.
+- `ls -l` displays the file type, permissions, owner, and group.
+- Permissions apply to the owner, the group, and other users.
+- For files, `r`, `w`, and `x` control reading, writing, and execution.
+- For directories, they control listing names, changing entries, and traversal.
+- Use `chmod` to change permissions, `chown` to change ownership, and `chgrp`
+  to change group ownership.
+- The root user is an administrator; it is different from the root directory `/`.
+  Use administrator privileges only when necessary.

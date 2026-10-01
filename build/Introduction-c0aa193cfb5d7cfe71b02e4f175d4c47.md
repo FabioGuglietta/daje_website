@@ -10,21 +10,35 @@ Marcello Sega & Fabio Guglietta
 ## Fundamentals
 
 
-### Introduction To UNIX
+### Operating Systems and Unix
 
-- [From Hardware to Operating Systems](1-Fundamentals/1-Introduction_to_UNIX/0-Historical_perspective.md)
-- [Introduction to Operating Systems](1-Fundamentals/1-Introduction_to_UNIX/1-Unix_and_Linux_operating_systems_BASIC.md)
-- [The Kernel](1-Fundamentals/1-Introduction_to_UNIX/5-kernel_and_system_calls.md)
-- [The Shell and Basic Unix Commands: Navigating the Unix Shell](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt1.md)
-- [The Shell and Basic Unix Commands: File Operations and Wildcards in the Unix Shell](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt2.md)
-- [The Shell and Basic Unix Commands: Creating and inspecting files](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt3.md)
-- [The Shell and Basic Unix Commands: Redirection and pipes](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_pt4.md)
-- [Example of Basic Unix Commands](1-Fundamentals/1-Introduction_to_UNIX/3-Shell_and_basic_Unix_commands_SUMMARY.md)
-- [Bash: Job control system aka multitasking](1-Fundamentals/1-Introduction_to_UNIX/4-Bash_Job_Control_System_aka_Multitasking.md)
-- [Bash: some useful tools](1-Fundamentals/1-Introduction_to_UNIX/8-More_Bash_Tools.md)
-- [The Unix filesystem: Structure](1-Fundamentals/1-Introduction_to_UNIX/90-unix_filesystem.md)
-- [The Unix Filesystem: Links](1-Fundamentals/1-Introduction_to_UNIX/91-filesystem_links.md)
-- [Connecting to remote machines with `ssh`](1-Fundamentals/1-Introduction_to_UNIX/100-Connecting_to_remote_machines_with_ssh.md)
+- [From Hardware to Operating Systems](1-Fundamentals/1-Operating_Systems_and_Unix/0-Historical_perspective.md)
+- [Introduction to Operating Systems](1-Fundamentals/1-Operating_Systems_and_Unix/1-Unix_and_Linux_operating_systems_BASIC.md)
+- [The Kernel](1-Fundamentals/1-Operating_Systems_and_Unix/5-kernel_and_system_calls.md)
+- [Memory: RAM, Registers, Cache, and Data Layout](1-Fundamentals/1-Operating_Systems_and_Unix/5a-memory_and_data_layout.md)
+- [Programs, Processes, and System Resources](1-Fundamentals/1-Operating_Systems_and_Unix/6-programs_processes_and_resources.md)
+- [The Unix Filesystem: Structure](1-Fundamentals/1-Operating_Systems_and_Unix/90-unix_filesystem.md)
+- [Users, Groups, and Privileges](1-Fundamentals/1-Operating_Systems_and_Unix/7-users_groups_and_privileges.md)
+- [Local and Remote Machines: The Client–Server Model](1-Fundamentals/1-Operating_Systems_and_Unix/95-local_remote_and_client_server.md)
+
+### Working with the Unix Shell (Basic)
+
+- [Getting Started with the Unix Shell](1-Fundamentals/2-Working_with_the_Unix_Shell_Basic/3-Shell_and_basic_Unix_commands_pt1.md)
+- [File Operations and Wildcards](1-Fundamentals/2-Working_with_the_Unix_Shell_Basic/3-Shell_and_basic_Unix_commands_pt2.md)
+- [File Ownership and Permissions](1-Fundamentals/2-Working_with_the_Unix_Shell_Basic/92-file_ownership_and_permissions.md)
+- [Creating and Inspecting Files](1-Fundamentals/2-Working_with_the_Unix_Shell_Basic/3-Shell_and_basic_Unix_commands_pt3.md)
+- [Redirection and Pipes](1-Fundamentals/2-Working_with_the_Unix_Shell_Basic/3-Shell_and_basic_Unix_commands_pt4.md)
+- [Example of Basic Unix Commands](1-Fundamentals/2-Working_with_the_Unix_Shell_Basic/3-Shell_and_basic_Unix_commands_SUMMARY.md)
+
+### Working with the Unix Shell (Advanced)
+
+- [Hard Links and Symbolic Links](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/91-filesystem_links.md)
+- [Bash: Job control system aka multitasking](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/4-Bash_Job_Control_System_aka_Multitasking.md)
+- [Bash Variables: Storing and Using Values](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/8-Bash_variables.md)
+- [Single Quotes, Double Quotes, and Variable Expansion](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/9-Bash_quoting.md)
+- [Environment Variables, export, and PATH](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/10-Bash_environment_and_PATH.md)
+- [Integer and Floating-Point Calculations in the Shell](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/11-Bash_arithmetic.md)
+- [Connecting to remote machines with `ssh`](1-Fundamentals/3-Working_with_the_Unix_Shell_Advanced/100-Connecting_to_remote_machines_with_ssh.md)
 
 ### Text Processing
 

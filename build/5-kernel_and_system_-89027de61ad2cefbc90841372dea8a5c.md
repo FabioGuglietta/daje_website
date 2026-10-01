@@ -36,42 +36,18 @@ through a mechanism called time-sharing.
 
 Memory serves as the workspace for programs and data.  Every program you run must be loaded into memory before it can be executed by the CPU.  The performance of computer code is often limited by the speed of transfering data between different types of memory, but reaching the physical limit and thus optimizing your code requires to carefully structuring your data and how these are accessed. 
 
-### Types of Memory
+The kernel manages each process's virtual address space, maps it to physical
+memory, and enforces access restrictions. When swap space is configured, some
+memory contents can be moved to storage and retrieved later. Swap is only one
+part of memory management; virtual memory is not simply extra RAM on disk.
 
-#### a. Registers
-- Smallest and fastest type of memory.
-- Located inside the CPU.
-- Used to hold data that the CPU is currently working on.
-- Typically a few bytes in size.
+Applications still need to manage their allocations correctly: the kernel
+does not automatically prevent memory leaks in a running program. Under severe
+memory pressure, allocations can fail or processes may be terminated.
 
-#### b. Cache
-- Faster than RAM, but much smaller.
-- Sits between the CPU and RAM.
-- Stores frequently accessed data to reduce memory access time.
-- Often organized into various levels, depending on their physical proximity to the registers: L1 (smallest, fastest), L2, L3 (larger, slower). Some type of cache are shared in multi-core CPUs.
-
-#### c. Main Memory (RAM)
-- **Random Access Memory** (RAM) is the primary memory used for **storing running programs** and data.
-- **Volatile**: contents are lost when power is off.
-- Measured in gigabytes (GB) in modern systems.
-
-
-> [!NOTE]
-> As you move up the hierarchy of memory from the registers to RAM/virtual memory:
-> - **Speed decreases**
-> - **Size increases**
-> - **Cost per byte decreases**
-
-
-
-#### e. Virtual Memory
-- Once the memory is fully allocated, the operating system usually crashes uncerimoniously. To avoid this issue, modern OSs are often allocating some disk space to function as *virtual* memory (also called swap space) that emulates the presence of extra RAM.
-
-
-The kernel ensures that each running process has the memory it needs and that no process exceeds its allocated memory. In particular, it handles:
-1. Memory Allocation: responsible for reserving and releasing memory as processes request it, ensuring there’s no memory leak (unused memory that’s not returned to the system).
-1. Virtual Memory: swapping inactive memory to disk (in a special area called the swap space) when the system runs low on physical RAM.
-
+The next lesson, [Memory: RAM, Registers, Cache, and Data Layout](5a-memory_and_data_layout.md),
+explains the hardware hierarchy, addresses, and why array layout matters for
+numerical calculations.
 
 ## Device Drivers
 These are specialized pieces of code that allow the operating system to communicate with hardware devices like printer, network card, or hard drive. 
