@@ -1,301 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:3001/sitemap_style.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3001</loc>
+    <loc>http://localhost:3000</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/historical-perspective</loc>
+    <loc>http://localhost:3000/historical-perspective</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/unix-and-linux-operating-systems-basic</loc>
+    <loc>http://localhost:3000/unix-and-linux-operating-systems-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/kernel-and-system-calls</loc>
+    <loc>http://localhost:3000/kernel-and-system-calls</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/a-memory-and-data-layout</loc>
+    <loc>http://localhost:3000/a-memory-and-data-layout</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/programs-processes-and-resources</loc>
+    <loc>http://localhost:3000/programs-processes-and-resources</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/unix-filesystem</loc>
+    <loc>http://localhost:3000/unix-filesystem</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/users-groups-and-privileges</loc>
+    <loc>http://localhost:3000/users-groups-and-privileges</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/local-remote-and-client-server</loc>
+    <loc>http://localhost:3000/local-remote-and-client-server</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/shell-and-basic-unix-commands-pt1</loc>
+    <loc>http://localhost:3000/shell-and-basic-unix-commands-pt1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/shell-and-basic-unix-commands-pt2</loc>
+    <loc>http://localhost:3000/shell-and-basic-unix-commands-pt2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/file-ownership-and-permissions</loc>
+    <loc>http://localhost:3000/file-ownership-and-permissions</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/shell-and-basic-unix-commands-pt3</loc>
+    <loc>http://localhost:3000/shell-and-basic-unix-commands-pt3</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/shell-and-basic-unix-commands-pt4</loc>
+    <loc>http://localhost:3000/shell-and-basic-unix-commands-pt4</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/shell-and-basic-unix-commands-summary</loc>
+    <loc>http://localhost:3000/shell-and-basic-unix-commands-summary</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/filesystem-links</loc>
+    <loc>http://localhost:3000/filesystem-links</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/bash-job-control-system-aka-multitasking</loc>
+    <loc>http://localhost:3000/bash-job-control-system-aka-multitasking</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/bash-variables</loc>
+    <loc>http://localhost:3000/bash-variables</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/bash-quoting</loc>
+    <loc>http://localhost:3000/bash-quoting</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/bash-environment-and-path</loc>
+    <loc>http://localhost:3000/bash-environment-and-path</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/bash-arithmetic</loc>
+    <loc>http://localhost:3000/bash-arithmetic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/connecting-to-remote-machines-with-ssh</loc>
+    <loc>http://localhost:3000/connecting-to-remote-machines-with-ssh</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/text-processing-in-the-shell</loc>
+    <loc>http://localhost:3000/text-processing-in-the-shell</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/sed</loc>
+    <loc>http://localhost:3000/sed</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/sed-examples</loc>
+    <loc>http://localhost:3000/sed-examples</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/regex</loc>
+    <loc>http://localhost:3000/regex</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/regex-examples</loc>
+    <loc>http://localhost:3000/regex-examples</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/awk</loc>
+    <loc>http://localhost:3000/awk</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/awk-exercises</loc>
+    <loc>http://localhost:3000/awk-exercises</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/compilers-basic</loc>
+    <loc>http://localhost:3000/compilers-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction</loc>
+    <loc>http://localhost:3000/introduction</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/next-steps</loc>
+    <loc>http://localhost:3000/next-steps</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-basics</loc>
+    <loc>http://localhost:3000/c-basics</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-pointers</loc>
+    <loc>http://localhost:3000/c-pointers</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-arrays</loc>
+    <loc>http://localhost:3000/c-arrays</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-multidim-arrays</loc>
+    <loc>http://localhost:3000/c-multidim-arrays</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-arrays-and-pointers</loc>
+    <loc>http://localhost:3000/c-arrays-and-pointers</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/array-indexing</loc>
+    <loc>http://localhost:3000/array-indexing</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/summary</loc>
+    <loc>http://localhost:3000/summary</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-passing-arguments</loc>
+    <loc>http://localhost:3000/c-passing-arguments</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-strings-and-memory-layout</loc>
+    <loc>http://localhost:3000/c-strings-and-memory-layout</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-struc</loc>
+    <loc>http://localhost:3000/c-struc</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-io-files</loc>
+    <loc>http://localhost:3000/c-io-files</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/c-modular-programming</loc>
+    <loc>http://localhost:3000/c-modular-programming</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/libraries</loc>
+    <loc>http://localhost:3000/libraries</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-basic</loc>
+    <loc>http://localhost:3000/fortran-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-arrays-basic</loc>
+    <loc>http://localhost:3000/fortran-arrays-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-multidim-arrays</loc>
+    <loc>http://localhost:3000/fortran-multidim-arrays</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-passing-arguments</loc>
+    <loc>http://localhost:3000/fortran-passing-arguments</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-types</loc>
+    <loc>http://localhost:3000/fortran-types</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-io-files</loc>
+    <loc>http://localhost:3000/fortran-io-files</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/fortran-modules</loc>
+    <loc>http://localhost:3000/fortran-modules</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-1</loc>
+    <loc>http://localhost:3000/introduction-1</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/exercises-basic</loc>
+    <loc>http://localhost:3000/exercises-basic</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/exercise-brownian-motion</loc>
+    <loc>http://localhost:3000/exercise-brownian-motion</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/exercise-bootstrap</loc>
+    <loc>http://localhost:3000/exercise-bootstrap</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/exercises-arrays-pointers</loc>
+    <loc>http://localhost:3000/exercises-arrays-pointers</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/exercises-newton</loc>
+    <loc>http://localhost:3000/exercises-newton</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/exercise-gaussian-quadrature</loc>
+    <loc>http://localhost:3000/exercise-gaussian-quadrature</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-2</loc>
+    <loc>http://localhost:3000/introduction-2</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/memory</loc>
+    <loc>http://localhost:3000/memory</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/number-representations</loc>
+    <loc>http://localhost:3000/number-representations</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/roundoff</loc>
+    <loc>http://localhost:3000/roundoff</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/x86-history</loc>
+    <loc>http://localhost:3000/x86-history</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/x86-assembly</loc>
+    <loc>http://localhost:3000/x86-assembly</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/simd-instructions</loc>
+    <loc>http://localhost:3000/simd-instructions</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/modern-cpu-architecture-panorama</loc>
+    <loc>http://localhost:3000/modern-cpu-architecture-panorama</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/simd-loop-unrolling-and-associative-algebra</loc>
+    <loc>http://localhost:3000/simd-loop-unrolling-and-associative-algebra</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/blas</loc>
+    <loc>http://localhost:3000/blas</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/lapack</loc>
+    <loc>http://localhost:3000/lapack</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-3</loc>
+    <loc>http://localhost:3000/introduction-3</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/forward-example</loc>
+    <loc>http://localhost:3000/forward-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/example-lu</loc>
+    <loc>http://localhost:3000/example-lu</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/backward-example</loc>
+    <loc>http://localhost:3000/backward-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/spectral-density</loc>
+    <loc>http://localhost:3000/spectral-density</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-4</loc>
+    <loc>http://localhost:3000/introduction-4</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/example</loc>
+    <loc>http://localhost:3000/example</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/modern-hpc-systems-and-programming-landscape</loc>
+    <loc>http://localhost:3000/modern-hpc-systems-and-programming-landscape</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-5</loc>
+    <loc>http://localhost:3000/introduction-5</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/openmp</loc>
+    <loc>http://localhost:3000/openmp</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/mpi</loc>
+    <loc>http://localhost:3000/mpi</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/mpi-sndrcv</loc>
+    <loc>http://localhost:3000/mpi-sndrcv</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/mpi-other-functions</loc>
+    <loc>http://localhost:3000/mpi-other-functions</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/mpi-cartesian</loc>
+    <loc>http://localhost:3000/mpi-cartesian</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/performances-strong-weak-scaling</loc>
+    <loc>http://localhost:3000/performances-strong-weak-scaling</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-6</loc>
+    <loc>http://localhost:3000/introduction-6</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/cuda</loc>
+    <loc>http://localhost:3000/cuda</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/query-gpu-prop</loc>
+    <loc>http://localhost:3000/query-gpu-prop</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/scaling</loc>
+    <loc>http://localhost:3000/scaling</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/multitasking</loc>
+    <loc>http://localhost:3000/multitasking</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/make</loc>
+    <loc>http://localhost:3000/make</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/cmake</loc>
+    <loc>http://localhost:3000/cmake</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/gdb</loc>
+    <loc>http://localhost:3000/gdb</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/basics</loc>
+    <loc>http://localhost:3000/basics</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/branching</loc>
+    <loc>http://localhost:3000/branching</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/introduction-7</loc>
+    <loc>http://localhost:3000/introduction-7</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/remote</loc>
+    <loc>http://localhost:3000/remote</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/vim-veryshort</loc>
+    <loc>http://localhost:3000/vim-veryshort</loc>
   </url>
   <url>
-    <loc>http://localhost:3001/vim</loc>
+    <loc>http://localhost:3000/vim</loc>
   </url>
 </urlset>
