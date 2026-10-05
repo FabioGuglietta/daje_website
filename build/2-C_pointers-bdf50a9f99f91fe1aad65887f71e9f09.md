@@ -3,7 +3,7 @@
 ## Call by Value 
 
 We now want to write a simple function, called `modify_value(a, b, c)`, that takes as input three integer parameters and performs the following operations: `a = a + c` and `b = b - c`.
-```C
+```c
 #include <stdio.h>
 
 // Function using pass-by-value
@@ -77,7 +77,7 @@ This is done using the asterisk operator `*`, also known as the **dereference op
 
 Let's look at this short example:
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
@@ -128,7 +128,7 @@ Well, in C, the variable `p` is called **pointer**. A pointer is a **variable** 
 
 The above pseudo code, in C, would read:
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
@@ -149,7 +149,7 @@ The data **type** tells the compiler what type of data the variable will contain
 
 The following is an example of a function that has as arguments the memory address of some variables:
 
-```C
+```c
 #include <stdio.h>
 
 void function(int *a, float *b){
@@ -200,7 +200,7 @@ When working with pointers, two key operators in C are the asterisk (*) and the 
 
 The `*` operator is used to **dereference** a pointer, which means accessing the value stored at the memory address the pointer holds.
 
-```C
+```c
 int x = 10;
 int *ptr = &x;    // ptr holds the address of x
 printf("%d\n", *ptr);  // Dereferencing ptr gives the value of x (10)
@@ -214,7 +214,7 @@ The `&` operator is used to get the **memory address** of a variable.
 > [!WARNING]
 > `&` gives the address of the variable, not its value!
 
-```C
+```c
 int x = 10;
 int *ptr = &x;  // &x gives the address of x, which is stored in ptr
 ```
@@ -224,7 +224,7 @@ In the last example, `&x` returns the _memory address_ where the variable `x` is
 > [!WARNING]
 > Note that the asterisk `*` is used both for declaring the pointer and for dereferencing it:
 >
-> ```C
+> ```c
 > int var = 42;
 > int *ptr; // The * is used to declare a pointer 
 > ptr = &var;
@@ -234,7 +234,7 @@ In the last example, `&x` returns the _memory address_ where the variable `x` is
 ## Wild Pointers
 Those pointers that do not point to any address are called **wild**:
 
-```C
+```c
 char *alphabetAddress; //Wild pointer
 char alphabet = "a";
 alphabetAddress = &alphabet; //No more wild
@@ -243,7 +243,7 @@ alphabetAddress = &alphabet; //No more wild
 > [!TIP]
 > To ensure that we don’t have a **wild** pointer, we can initialize a pointer with a `NULL` value, making it a null pointer:
 >
-> ```C
+> ```c
 > char *alphabetAddress = NULL;
 > ```
 
@@ -263,7 +263,7 @@ When you add 1 to a pointer, you're actually **adding the size of the type** it 
 > [!WARNING]
 > When you add (or subtract) an integer (say `n`) to a pointer, you’re **NOT** actually adding (or subtracting) `n` bytes to the pointer’s value. Instead, you are adding (or subtracting) `n` **times the size in bytes** of the **data type** of the variable being pointed to.
 >
-> ```C
+> ```c
 > int a = 5;
 > int *ptr = &a;            // Assume the address is 1000
 > int newAddress = ptr + 3; // It is equal to: ptr + 3*sizeof(int) = 1000 + 3*4 = 1012
@@ -271,7 +271,7 @@ When you add 1 to a pointer, you're actually **adding the size of the type** it 
 
 Let's look at the follwing code:
 
-```C
+```c
 #include <stdio.h>
 
 int main(){
@@ -456,7 +456,7 @@ Just like any other pointer, you can **dereference** a function pointer **to cal
 
 Below is an example that shows how function pointers can be used. In this case, we have two functions: `add` and `subtract`. We then use a function pointer to select which function to call based on a condition.
 
-```C
+```c
 #include <stdio.h>
 
 // Functions
@@ -508,7 +508,7 @@ Explanation:
 
 In C, the `**` symbol is used when you are dealing with **pointers to pointers**. This means you have a pointer that points to another pointer, which in turn points to some data. It’s often used in more complex scenarios such as dynamic memory allocation for multi-dimensional arrays, handling arrays of strings (array of character pointers), or passing pointers by reference to functions.
 
-```C
+```c
 int x = 5;
 int *ptr = &x;   // ptr is a pointer to x (an int)
 int **ptr2 = &ptr; // ptr2 is a pointer to ptr (a pointer to int)
@@ -526,7 +526,7 @@ How it Works:
 
 A typical example is given by the following:
 
-```C
+```c
 void modifyPointer(int **ptr) {
     static int y = 100;
     *ptr = &y;  // Modify the pointer itself to point to y
@@ -576,7 +576,7 @@ We now want to write a program that performs numerical integration of a function
 Specifically, we will integrate the function $f(x) = x^3$ over a given interval $[a, b]$ by dividing the domain into $n$ sub-intervals (trapezoids) and summing the contributions from each.
 In addition to computing the integral, our program will also demonstrate how to **store** intermediate data during the calculation: indeed, to keep of the x-values where the function is evaluated and the corresponding $f(x)$ values, we will ***dynamically*** allocate the memory to store `x_values` and `f_values`, respectively/
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -648,7 +648,7 @@ TODO: introduzione
 
 To dynamically allocate a pointer, we use the function `malloc` (memory allocation), which allocates a specified number of bytes of memory and returns a pointer to the beginning of this memory block.:
 
-```C
+```c
 double *x_values = malloc(n * sizeof(double));
 ```
 
@@ -673,7 +673,7 @@ The pointer returned by `malloc` is assigned to `x_values`. This pointer now poi
 > **Check for NULL**: It is important to check if `malloc` returns `NULL`, which indicates that 
 > the memory allocation has failed. In robust code, you would include a check to handle this case:
 > 
-> ```C
+> ```c
 > if (x_values == NULL) {
 >   fprintf("Memory allocation failed\n");
 >   return 1; // Exit or handle the error appropriately
@@ -682,7 +682,7 @@ The pointer returned by `malloc` is assigned to `x_values`. This pointer now poi
 
 Once the pointers `x_values` and `f_values` have been allocated, they are passed to the function `trapezoidal_rule` exactly as we did for the arrays. The difference now is in how the function `trapezoidal_rule` gets them as input variables:
 
-```C
+```c
 double trapezoidal_rule(double (*func)(double), double a, double b, int n, double *x_values, double *f_values) {
 ```
 
