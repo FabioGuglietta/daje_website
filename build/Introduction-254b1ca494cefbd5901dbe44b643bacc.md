@@ -60,7 +60,7 @@ Marcello Sega & Fabio Guglietta
 
 - [C basics](1-Fundamentals/300-The_C_programming_language_basics/1-C_basics.md)
 - [Call by Value, Call by Refrence and Pointers](1-Fundamentals/300-The_C_programming_language_basics/2-C_pointers.md)
-- [C arrays](1-Fundamentals/300-The_C_programming_language_basics/3-C_arrays.md)
+- [Arrays](1-Fundamentals/300-The_C_programming_language_basics/3-C_arrays.md)
 - [Multidimensional arrays](1-Fundamentals/300-The_C_programming_language_basics/4-C_multiDim_arrays.md)
 - [Pointers and Arrays](1-Fundamentals/300-The_C_programming_language_basics/5-C_arrays_and_pointers.md)
 - [Array Indexing: Fortran vs. C](1-Fundamentals/300-The_C_programming_language_basics/6-array_indexing.md)
