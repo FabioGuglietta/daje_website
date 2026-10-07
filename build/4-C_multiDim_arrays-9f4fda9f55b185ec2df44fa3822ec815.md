@@ -2,19 +2,19 @@
 
 Multidimensional arrays in C are arrays of arrays. They allow you to store data in a table-like structure, such as matrices or grids. 
 
-```C 
+```c 
 type array_name[size1][size2][...];
 ```
 
 An example of a 2D array:
 
-```C
+```c
 int matrix[3][4];  // Array of 3 rows and 4 columns
 ```
 
 It can be initialised either with a *full initialisation*:
 
-```C
+```c
 	int matrix[2][3] = {
 	{1, 2, 3},
 	{4, 5, 6}
@@ -23,7 +23,7 @@ It can be initialised either with a *full initialisation*:
 
 or with a *partial initialisation* (remaining elements are set to 0):
 
-```C
+```c
 int matrix[2][3] = {
     {1, 2}
 }; 
@@ -31,7 +31,7 @@ int matrix[2][3] = {
 
 Example:
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
@@ -78,7 +78,7 @@ for (int j = 0; j < 100; j++)      // Slower: column-wise access
 
 Let's look a the following code:
 
-```C
+```c
 #include <stdio.h>
 
 #define ROWS 3
@@ -131,7 +131,7 @@ In C programming, `#define` is a preprocessor directive used to create symbolic 
 
 In our example:
 
-```C
+```c
 #define ROWS 3
 #define COLS 4
 ```
@@ -141,17 +141,17 @@ we are defining the number of rows and columns for the 2D array. Whenever ROWS (
 ### function definition
 
 When defining a function like:
-```C
+```c
 void increment_array(int arr[][COLS], int rows_local)
 ```
 you need to include one set of square brackets [] for each dimension of the array. For example, a 3D array would be passed as:
-```C
+```c
 void function(int arr[][M][L], int N)
 ```
 The size of the first dimension can be left empty, but the sizes of all subsequent dimensions (from the second one onward) must be explicitly declared. Since the size of the first dimension is not automatically known inside the function, you must pass it as an additional argument.
 
 In our example, the variable rows_local was used for instructional purposes. However, a better approach would be to follow the method used in the print_array function, where macros are utilized for clarity:
-```C
+```c
 void print_array(int arr[ROWS][COLS])
 ```
 This way, ROWS and COLS are predefined constants (by using `#define`), which makes the code more readable and maintainable.

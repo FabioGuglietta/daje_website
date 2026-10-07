@@ -4,7 +4,7 @@
 
 We now consider the following code:
 
-```C
+```c
 #include <stdio.h>
 
 int main(){
@@ -69,7 +69,7 @@ On the other hand, `&prime` is a pointer to an array of 5 integers. It holds the
 
 We can access the elements of the array using indexed variables like this:
 
-```C
+```c
 int arr = {5,10,15,20,25};
 for (int i = 0; i < 5; i++){
   printf("index = %d, address = %d, value = %d\n", i, &arr[i], arr[i]);
@@ -78,7 +78,7 @@ for (int i = 0; i < 5; i++){
 
 or we can do the same thing using pointers, which are generally faster than using indexing:
 
-```C
+```c
 int arr = {5,10,15,20,25};
 for (int i = 0; i < 5; i++){
   printf("index = %d, address = %d, value = %d\n", i, arr+i, *(arr+i));
@@ -103,7 +103,7 @@ In this section, we consider 2D arrays (but the discussion can be easily extende
 
 Suppose we want to allocate an array to represent the 3 components of the velocity for each of the $N$ particles. 
 To allocate it dynamically, we must use pointers:
-```C
+```c
 arr = (float **)malloc(N*sizeof(float *));
 for (int i = 0; i < N; i++) {
   arr[i] = (float *)malloc(3 * sizeof(float));
@@ -111,7 +111,7 @@ for (int i = 0; i < N; i++) {
 ```
 Here, `arr` is declared as a pointer to a pointer to a float. This type of pointer is used to represent a 2D array because, in C, a 2D array is essentially an **array of arrays**. Each pointer in the first dimension (`arr[i]`) will point to a one-dimensional array of floats (the columns).
 To allocate the first dimension (rows), we have used:
-```C
+```c
 arr = (float **)malloc(N * sizeof(float *));
 ```
 This line allocates memory for `N` pointers to floats, where `N` represents the number of rows. The `malloc` function dynamically allocates memory, and `sizeof(float *)` ensures that the correct amount of memory is reserved for each pointer. Since `arr` is a pointer to a pointer, it needs memory for storing `N` pointers that will later point to the actual rows of floats.
@@ -120,7 +120,7 @@ This line allocates memory for `N` pointers to floats, where `N` represents the 
 > The `(float **)` in front of the `malloc()` call is a **type cast**. Indeed, `malloc()` returns a pointer of type `void *`. A `void *` pointer is a generic pointer that can point to any type of data, but it doesn’t carry type information itself. Therefore, when you assign the result of `malloc()` to a variable of a specific pointer type (like `float **` in your case), you need to cast the `void *` pointer to the appropriate type so that the compiler knows how to interpret it. So, the `(float **)` cast is used to explicitly convert the `void *` returned by `malloc()` into a `float **`, which is necessary for the variable `arr`.
 
 To allocate the second dimension (columns), we have used:
-```C
+```c
 for (int i = 0; i < N; i++) {
     arr[i] = (float *)malloc(3 * sizeof(float));
 }
@@ -131,7 +131,7 @@ To summarise, we created a pointer (`arr`) that points to an **array of pointers
 
 > [!WARNING]
 > **Memory Management:** Since you’re **dynamically allocating memory**, it’s essential to **free** the allocated memory later to avoid **memory leaks**. This would be done using `free()` for each row and finally for the array of pointers:
-> ```C
+> ```c
 > for (int i = 0; i < N; i++) {
 >    free(arr[i]);  // Free each row
 > }
@@ -141,7 +141,7 @@ To summarise, we created a pointer (`arr`) that points to an **array of pointers
 
 The follwing example shows also how to pass this 2D array to a function:
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
