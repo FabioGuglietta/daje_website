@@ -1,4 +1,4 @@
-# Array Indexing: Fortran vs. C
+# Array Indexing and Lexicographic Order
 
 In scientific computing and high-performance applications, **arrays are central data structures.** 
 However, the way they are declared, accessed, and optimized can vary significantly between programming languages.

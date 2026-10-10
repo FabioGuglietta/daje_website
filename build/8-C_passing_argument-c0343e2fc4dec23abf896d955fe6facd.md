@@ -1,3 +1,5 @@
+# Command-Line Arguments in C: argc and argv
+
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,7 +74,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-## Read command line arguments: `argc` and `argv`
+## Understanding `argc` and `argv`
 
 
 In C, `argc` and `argv` are used to handle command line arguments passed to a program. They provide a way to pass information from the command line when starting the program.

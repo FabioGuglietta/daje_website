@@ -58,14 +58,13 @@ Marcello Sega & Fabio Guglietta
 
 ### The C Programming Language Basics
 
-- [C basics](1-Fundamentals/300-The_C_programming_language_basics/1-C_basics.md)
+- [C Programming Basics](1-Fundamentals/300-The_C_programming_language_basics/1-C_basics.md)
 - [Call by Value, Call by Refrence and Pointers](1-Fundamentals/300-The_C_programming_language_basics/2-C_pointers.md)
 - [Arrays](1-Fundamentals/300-The_C_programming_language_basics/3-C_arrays.md)
 - [Multidimensional arrays](1-Fundamentals/300-The_C_programming_language_basics/4-C_multiDim_arrays.md)
-- [Pointers and Arrays](1-Fundamentals/300-The_C_programming_language_basics/5-C_arrays_and_pointers.md)
-- [Array Indexing: Fortran vs. C](1-Fundamentals/300-The_C_programming_language_basics/6-array_indexing.md)
+- [Array Indexing and Lexicographic Order](1-Fundamentals/300-The_C_programming_language_basics/6-array_indexing.md)
 - [summary](1-Fundamentals/300-The_C_programming_language_basics/7-summary.md)
-- [C passing arguments](1-Fundamentals/300-The_C_programming_language_basics/8-C_passing_arguments.md)
+- [Command-Line Arguments in C: argc and argv](1-Fundamentals/300-The_C_programming_language_basics/8-C_passing_arguments.md)
 - [C and strings, a good excuse to discus the memory layout](1-Fundamentals/300-The_C_programming_language_basics/9-C_strings_and_memory_layout.md)
 - [Structures](1-Fundamentals/300-The_C_programming_language_basics/10-C_struc.md)
 - [File Input/Output: Reading and Writing Files](1-Fundamentals/300-The_C_programming_language_basics/11-C_IO_files.md)
