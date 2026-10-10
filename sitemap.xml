@@ -161,13 +161,16 @@
     <loc>http://localhost:3000/exercises-basic</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/exercises-arrays-pointers</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/exercise-read-input-file</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/exercise-brownian-motion</loc>
   </url>
   <url>
     <loc>http://localhost:3000/exercise-bootstrap</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/exercises-arrays-pointers</loc>
   </url>
   <url>
     <loc>http://localhost:3000/exercises-newton</loc>
