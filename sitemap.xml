@@ -116,6 +116,9 @@
     <loc>http://localhost:3000/summary</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/a-c-strings-basics</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/c-passing-arguments</loc>
   </url>
   <url>

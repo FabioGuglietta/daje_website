@@ -64,6 +64,7 @@ Marcello Sega & Fabio Guglietta
 - [Multidimensional arrays](1-Fundamentals/300-The_C_programming_language_basics/4-C_multiDim_arrays.md)
 - [Array Indexing and Lexicographic Order](1-Fundamentals/300-The_C_programming_language_basics/6-array_indexing.md)
 - [summary](1-Fundamentals/300-The_C_programming_language_basics/7-summary.md)
+- [Strings in C](1-Fundamentals/300-The_C_programming_language_basics/7a-C_strings_basics.md)
 - [Command-Line Arguments in C: argc and argv](1-Fundamentals/300-The_C_programming_language_basics/8-C_passing_arguments.md)
 - [C and strings, a good excuse to discus the memory layout](1-Fundamentals/300-The_C_programming_language_basics/9-C_strings_and_memory_layout.md)
 - [Structures](1-Fundamentals/300-The_C_programming_language_basics/10-C_struc.md)
