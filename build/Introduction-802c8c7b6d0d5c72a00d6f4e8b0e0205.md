@@ -92,7 +92,6 @@ Marcello Sega & Fabio Guglietta
 - [Exercises related to arrays and pointers](1-Fundamentals/600-Exercises_in_C_and_Fortran/4-Exercises_arrays_pointers.md)
 - [Exercise — Analysis of a velocity time series](1-Fundamentals/600-Exercises_in_C_and_Fortran/7-Exercise_read_input_file.md)
 - [Brownian Motion and the Diffusion Coefficient](1-Fundamentals/600-Exercises_in_C_and_Fortran/2-Exercise_Brownian_motion.md)
-- [Estimate the Uncertainty of a Derived Quantity Using Bootstrap](1-Fundamentals/600-Exercises_in_C_and_Fortran/3-Exercise_Bootstrap.md)
 - [Build a Stable Planetary System](1-Fundamentals/600-Exercises_in_C_and_Fortran/5-Exercises_Newton.md)
 - [Gaussian quadrature](1-Fundamentals/600-Exercises_in_C_and_Fortran/6-Exercise_Gaussian_quadrature.md)
 
