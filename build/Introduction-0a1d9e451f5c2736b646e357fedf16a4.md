@@ -68,7 +68,7 @@ Marcello Sega & Fabio Guglietta
 - [Structures](1-Fundamentals/300-The_C_programming_language_basics/10-C_struc.md)
 - [File Input/Output: Reading and Writing Files](1-Fundamentals/300-The_C_programming_language_basics/11-C_IO_files.md)
 - [Modular Programming in C](1-Fundamentals/300-The_C_programming_language_basics/12-C_modular_programming.md)
-- [Libraries](1-Fundamentals/300-The_C_programming_language_basics/13-libraries.md)
+- [Static and Shared Libraries in C](1-Fundamentals/300-The_C_programming_language_basics/13-libraries.md)
 
 ### The Fortran Programming Language Basics
 
