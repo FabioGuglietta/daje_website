@@ -60,7 +60,7 @@ What Goes Where?
 > When writing modular C programs with multiple header files, you often include the **same header** in **several source files**. This can accidentally lead to **multiple inclusion** of the same declarations, which causes compilation errors like “_redefinition of…_”.
 > To avoid this, we use include guards: a simple mechanism that ensures a header file is included only once per compilation unit.
 > Every header file should be protected against multiple inclusions with `#ifndef` / `#define` / `#endif`:
-> ```C
+> ```c
 > // math_utils.h
 > #ifndef MATH_UTILS_H
 > #define MATH_UTILS_H
@@ -87,7 +87,7 @@ Also known as the function prototype, the declaration tells the compiler:
 
 It **does not contain** the **function** body.
 
-```C
+```c
 // math_utils.h
 
 #ifndef MATH_UTILS_H
@@ -104,7 +104,7 @@ int multiply(int a, int b);
    
 Here you define how the function actually works.
 
-```C
+```c
 // math_utils.c
 
 #include "math_utils.h"
@@ -124,7 +124,7 @@ int multiply(int a, int b) {
    
 The main program can now use the functions by including the header:
 
-```C
+```c
 // main.c
 
 #include <stdio.h>
@@ -224,7 +224,7 @@ project/
 ```
 
 ### `math_utils.h`
-```C
+```c
 #ifndef MATH_UTILS_H
 #define MATH_UTILS_H
 
@@ -234,7 +234,7 @@ int multiply(int a, int b);
 #endif // MATH_UTILS_H
 ```
 ### `math_utils.c`
-```C
+```c
 #include "math_utils.h"
 
 int add(int a, int b) {
@@ -247,7 +247,7 @@ int multiply(int a, int b) {
 ```
 
 ### `string_utils.h`
-```C
+```c
 #ifndef STRING_UTILS_H
 #define STRING_UTILS_H
 
@@ -257,7 +257,7 @@ void greet(const char *name);
 ```
 
 ### `string_utils.c`
-```C
+```c
 #include <stdio.h>
 #include "string_utils.h"
 
@@ -267,7 +267,7 @@ void greet(const char *name) {
 ```
 
 ### `main.c`
-```C
+```c
 #include <stdio.h>
 #include "math_utils.h"
 #include "string_utils.h"
